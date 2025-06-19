@@ -101,16 +101,12 @@ problem of difficulty \(Z < z_i\)} with certainty. Problems harder than
 their skill level are beyond their capability. We assume there are two
 classes of human workers:
 
-\begin{itemize}
+{Juniors:} skill level \(z_0\) (low skill). They can solve
+easier problems.
 
-\item
-  {Juniors:} skill level \(z_0\) (low skill). They can solve
-  easier problems.
-\item
-  {Seniors:} skill level \(z_1\) (high skill, with
-  \(z_1 > z_0\)). They can solve a wider range of problems (all that
-  juniors can, and more).
-\end{itemize}
+{Seniors:} skill level \(z_1\) (high skill, with
+\(z_1 > z_0\)). They can solve a wider range of problems (all that
+juniors can, and more).
 
 In a {solo work} setting, if a worker devotes one unit of time to
 work on random problems, their probability of solving a given problem
@@ -147,11 +143,14 @@ average \(1-z_0\) per junior -- are passed to the senior. In total, the
 senior receives about \(n_0 (1 - z_0)\) problems to look at.
 {Crucially, the senior must spend \(h\) time on each forwarded
 problem.} Setting the senior's total time to 1 unit (one time period of
-work), we get a capacity constraint: \(n_0 (1 - z_0)\, h \le 1.\) If the
+work), we get a capacity constraint: \(n_0 (1 - z_0) h \le 1.\) If the
 team is working at full capacity, the senior's time is fully utilized by
 handling juniors' questions. The above equation then binds, giving the
-{maximum team size} a single senior can manage: $n\_0 ;=;
-\frac{1}{\,h(1 - z_0)\,}. \tag{1}$
+{maximum team size} a single senior can manage: 
+\begin{equation}
+n_0 =
+\frac{1}{h(1 - z_0)}. \tag{1}
+\end{equation}
 
 This result highlights why seniors can be extremely productive when
 supported by a team of juniors: if communication is efficient (small
@@ -164,33 +163,31 @@ the limit of \(h \to 0\) or \(z_0 \to 1\), the leverage goes to infinity
 {Team output:} In such an optimal team, what is produced in one
 unit of time? There are two sources of solved problems:
 
-\begin{itemize}
-
-\item
-  {Problems solved by juniors:} Each of the \(n_0\) juniors
+{Problems solved by juniors:} Each of the \(n_0\) juniors
   solves a fraction \(z_0\) of the problems they see. So total
   junior-solved output = \(n_0 \cdot z_0\).
-\item
-  {Problems solved by the senior:} The senior tackles the
-  forwarded problems. The senior's skill is higher, so they can solve
-  problems up to difficulty \(z_1\). However, note that juniors would
-  have solved anything below \(z_0\) already. Therefore, the senior only
-  {gets} problems in the difficulty range \([z_0,\, z_1)\) (those
-  below \(z_0\) solved by juniors, those above
-  $z_1$ unsolvable by anyone). Thus, among the problems forwarded, the fraction the senior can solve is \(\frac{z_1 - z_0}{\,1 - z_0\,}\)
-  (solvable out of those forwarded). Since the senior receives
-  \(n_0(1-z_0)\) problems (as established), the number of problems the
-  senior solves is:
-  \(n_0 (1-z_0) \times \frac{z_1 - z_0}{\,1 - z_0\,} \;=\; n_0\,(z_1 - z_0).\)
-  This simplifies nicely: {problems solved by the senior =
-  \(n_0 (z_1 - z_0)\).}
-\end{itemize}
+
+{Problems solved by the senior:} The senior tackles the
+forwarded problems. The senior's skill is higher, so they can solve
+problems up to difficulty \(z_1\). However, note that juniors would
+have solved anything below \(z_0\) already. Therefore, the senior only
+{gets} problems in the difficulty range \([z_0, z_1)\) (those
+below \(z_0\) solved by juniors, those above
+$z_1$ unsolvable by anyone). Thus, among the problems forwarded, the fraction the senior can solve is \(\frac{z_1 - z_0}{1 - z_0}\)
+(solvable out of those forwarded). Since the senior receives
+\(n_0(1-z_0)\) problems (as established), the number of problems the
+senior solves is:
+\(n_0 (1-z_0) \times \frac{z_1 - z_0}{1 - z_0} = n_0(z_1 - z_0).\)
+This simplifies nicely: {problems solved by the senior =
+\(n_0 (z_1 - z_0)\).}
 
 Adding up, the {team's total output} (problems solved by junior +
 senior per senior's time) is:
-\(Q_{\text{team per senior}} \;=\; n_0 z_0 \;+\; n_0 (z_1 - z_0) \;=\; n_0\, z_1.\)
-Using the expression for \(n_0\) from (1), this becomes: $
-Q\_\{\text{team per senior}\} ;=; \frac{z_1}{\,h(1 - z_0)\,},. \tag{2}$
+\(Q_{\text{team per senior}} = n_0 z_0 + n_0 (z_1 - z_0) = n_0 z_1.\)
+Using the expression for \(n_0\) from (1), this becomes: 
+\begin{equation}
+Q_{\text{team per senior}}  =  \frac{z_1}{h(1 - z_0)},. \tag{2}
+\end{equation}
 This result is striking: a senior-led team produces output
 \(\frac{z_1}{h(1-z_0)}\) per senior, which can be much larger than
 either a senior or junior alone. The factor \(\frac{1}{h(1-z_0)}\)
@@ -201,7 +198,7 @@ of tasks without escalation).
 
 In fact, the marginal value of increasing the senior's skill \(z_1\) is
 amplified in a team:
-\(\frac{\partial Q_{\text{team}}}{\partial z_1} = \frac{1}{\,h(1-z_0)\,},\)
+\(\frac{\partial Q_{\text{team}}}{\partial z_1} = \frac{1}{h(1-z_0)},\)
 which is greater than 1 (since \(h(1-z_0)<1\)). By contrast, if the
 senior works {solo}, the marginal return to their skill is just 1
 (one more point in \(z_1\) means one more problem solved per time unit).
@@ -228,144 +225,161 @@ whether team opportunities are abundant or scarce.
 
 Two cases naturally arise:
 
-\begin{itemize}
+{Case 1: Seniors are the bottleneck (Senior-scarce, ``Too many
+juniors'').} Suppose there are a lot of juniors relative to seniors,
+specifically \(L_0 > n_0 L_1\). This inequality says: even if every
+senior takes on a full team of \(n_0\) juniors, there would still be
+some juniors left without a senior. In this scenario, {not all
+juniors can join teams}; the ``excess'' juniors must work solo (since
+there aren't enough seniors to mentor them). Essentially, seniors are
+the limiting factor for forming teams.
+
+In equilibrium, any junior {not} in a team will produce output on
+their own and earn their solo wage \(z_0\). This sets a floor for the
+junior wage: {junior wage \(w_0\) must equal \(z_0\)}, the solo
+productivity. If a firm tried to pay a junior less, that junior could
+instead choose to work alone and earn \(z_0\) by solving easy tasks on
+their own. Thus: 
+\begin{equation}
+    w_0 = z_0. \tag{3}
+\end{equation}
+
+Now consider seniors. Every senior can form a team and achieve the
+high output \(Q_{\text{team}} = \frac{z_1}{h(1-z_0)}\) (per time
+unit). This is the {value of one senior plus \(n_0\) juniors}.
+How is this value split into wages? If juniors each earn \(z_0\)
+(their outside option), the total junior wage bill per team is
+\(n_0 \cdot w_0 = n_0 z_0\). The remainder of the team output goes to
+the senior as the senior's wage. Therefore:
+\(w_1 = Q_{\text{team}} - n_0 w_0 = \frac{z_1}{h(1-z_0)} - n_0 z_0.\)
+But recall \(n_0 = \frac{1}{h(1-z_0)}\) from (1). Plugging that in: 
+\begin{equation}
+w_1  =  \frac{z_1}{h(1-z_0)} ;-; \frac{1}{h(1-z_0)} ,z_0  = 
+\frac{z_1 - z_0}{h(1-z_0)}. \tag{4}
+\end{equation}
+
+Thus in Case 1, {senior wage}
+\(w_1 = \frac{z_1 - z_0}{h(1-z_0)}\), while {junior wage}
+\(w_0 = z_0\). We observe that seniors capture all the {surplus}
+from teamwork above what juniors could produce alone. Juniors are paid
+just their solo productivity, and the extra output that comes from the
+senior's guidance accrues to the senior. This wage structure reflects
+the {bargaining power of scarce seniors}: they are the limiting
+resource, so they can demand a high wage. The {wage ratio} here
+is: 
+\begin{equation}
+\frac{w_1}{w_0}  =  \frac{z_1 - z_0}{hz_0(1-z_0)},.
+\tag{5}
+\end{equation}
+This can be much larger than 1, indicating significant
+inequality in favor of seniors when seniors are scarce.
+
+{GDP in Case 1:} In aggregate, all \(L_1\) seniors will form
+teams and produce \(\frac{z_1}{h(1-z_0)}\) each, while the leftover
+juniors (those not in teams) work solo producing \(z_0\) each. The
+number of juniors in teams is \(n_0 L_1 = \frac{L_1}{h(1-z_0)}\). If
+\(L_0 > n_0 L_1\), then \(L_0 - \frac{L_1}{h(1-z_0)}\) juniors are
+solo. So total output (GDP) is:
+\(Y = L_1 \left(\frac{z_1}{h(1-z_0)}\right) + \left(L_0 - \frac{L_1}{h(1-z_0)}\right) z_0.\)
+Simplifying, $ Y = \frac{L_1(z_1 - z_0)}{h(1-z_0)} +
+L_0,z_0.$ The first term is output from teams (which equals total
+senior wages \(L_1 w_1\)), and the second term is output from solo
+juniors (equal to their wages \(L_0 w_0\)). This economy's GDP is
+higher than it would be without teams, due to the productivity boost
+of seniors collaborating with juniors.
+
+We should note a {participation constraint}: seniors will only
+agree to work in a team (bearing the hassle of mentoring) if they earn
+at least what they could get by working solo. A senior's solo outside
+option is \(z_1\). In Case 1, do they get at least that? The condition
+\(w_1 \ge z_1\) implies: 
+$$
+\frac{z_1 - z_0}{h(1-z_0)} \ge z_1.
+$$
+This rearranges to 
+\begin{equation}
+z_1 ;\ge; \frac{z_0}{1 - h(1-z_0)},.
+\tag{PC}
+\end{equation}
+This inequality is assumed to hold by parameter choice (the
+problem statement notes we assume parameters such that the
+participation constraint holds). Intuitively, it requires the senior's
+skill advantage \(z_1 - z_0\) and the leverage factor \(1/[h(1-z_0)]\)
+be large enough that team output exceeds the sum of what the senior
+and juniors could do separately. If this holds, seniors willingly form
+teams (it is indeed optimal for them). We will maintain this
+assumption so that teamwork is viable; otherwise, if \(w_1 < z_1\), a
+senior might prefer to dismiss the juniors and just solve problems
+alone.
 \item
-  {Case 1: Seniors are the bottleneck (Senior-scarce, ``Too many
-  juniors'').} Suppose there are a lot of juniors relative to seniors,
-  specifically \(L_0 > n_0 \,L_1\). This inequality says: even if every
-  senior takes on a full team of \(n_0\) juniors, there would still be
-  some juniors left without a senior. In this scenario, {not all
-  juniors can join teams}; the ``excess'' juniors must work solo (since
-  there aren't enough seniors to mentor them). Essentially, seniors are
-  the limiting factor for forming teams.
+{Case 2: Juniors are the bottleneck (Junior-scarce, ``Too many
+seniors'').} Now consider the opposite situation: \(L_0 < n_0 L_1\).
+There are not enough juniors to utilize all seniors' capacity. In
+fact, in this case every junior can join a team, and some seniors will
+still be left without a junior partner. Juniors become the scarce
+factor. In equilibrium, junior wages will be bid {above} their
+solo productivity because seniors compete to get them on their team.
 
-  In equilibrium, any junior {not} in a team will produce output on
-  their own and earn their solo wage \(z_0\). This sets a floor for the
-  junior wage: {junior wage \(w_0\) must equal \(z_0\)}, the solo
-  productivity. If a firm tried to pay a junior less, that junior could
-  instead choose to work alone and earn \(z_0\) by solving easy tasks on
-  their own. Thus: $ w\_0 = z\_0. \tag{3}$
+Specifically, when seniors are abundant, a senior who fails to hire a
+junior would have to work alone and earn \(z_1\). But a senior with a
+junior (or ideally \(n_0\) juniors) can achieve higher output. So
+seniors are willing to pay a premium to attract juniors. The
+equilibrium will equalize the benefit: some seniors end up solo and
+earn \(z_1\), while those with teams get the team output minus what
+they paid juniors. In a competitive equilibrium, no arbitrage implies
+a senior is indifferent between working solo or hiring juniors at the
+going wage.
 
-  Now consider seniors. Every senior can form a team and achieve the
-  high output \(Q_{\text{team}} = \frac{z_1}{h(1-z_0)}\) (per time
-  unit). This is the {value of one senior plus \(n_0\) juniors}.
-  How is this value split into wages? If juniors each earn \(z_0\)
-  (their outside option), the total junior wage bill per team is
-  \(n_0 \cdot w_0 = n_0 z_0\). The remainder of the team output goes to
-  the senior as the senior's wage. Therefore:
-  \(w_1 \;=\; Q_{\text{team}} \,-\, n_0 w_0 \;=\; \frac{z_1}{\,h(1-z_0)\,} \;-\; n_0 z_0.\)
-  But recall \(n_0 = \frac{1}{h(1-z_0)}\) from (1). Plugging that in: $
-  w\_1 ;=; \frac{z_1}{\,h(1-z_0)\,} ;-; \frac{1}{\,h(1-z_0)\,} ,z\_0 ;=;
-  \frac{z_1 - z_0}{\,h(1-z_0)\,},. \tag{4}$
+In Case 2, the {senior wage gets pushed down to their solo
+output}: \(w_1 = z_1.\) Seniors are no longer capturing a big surplus;
+if they tried to demand more, firms would just use an extra senior in
+place of a costly one (since seniors are plentiful). Meanwhile,
+{juniors capture all the surplus from teamwork}. The logic: a
+junior joining a team enables the senior to go from \(z_1\) output
+(solo) to \(\frac{z_1}{h(1-z_0)}\) output. That gain is
+\(\frac{z_1}{h(1-z_0)} - z_1\). With juniors scarce, they can bargain
+for (almost) that entire gain in their wage. Formally, if one senior
+can only hire \(n_0\) juniors, the total team output minus the
+senior's outside option is the pool to pay juniors. For one senior
+with \(n_0\) juniors:
+\(\text{Surplus from team} = \frac{z_1}{h(1-z_0)} - z_1.\) This must
+equal the total premium paid to juniors above their next best option.
+Juniors' next best is working solo for \(z_0\). So if the junior team
+wage is \(w_{0,\text{team}}\), the premium per junior is
+\(w_{0,\text{team}} - z_0\). With \(n_0\) juniors,
+\(n_0 (w_{0,\text{team}} - z_0)\) should equal the surplus:
+\(n_0 (w_{0,\text{team}} - z_0) = \frac{z_1}{h(1-z_0)} - z_1.\) Using
+\(n_0 = \frac{1}{h(1-z_0)}\), this yields:
+\(w_{0,\text{team}} = \frac{z_1}{h(1-z_0) n_0} - \frac{z_1}{n_0} + z_0 = \frac{z_1}{h(1-z_0)} \frac{1}{n_0} - \frac{z_1}{n_0} + z_0.\)
+But \(1/n_0 = h(1-z_0)\). Simplifying:
+\(w_{0,\text{team}} = z_1 [h(1-z_0)] - 0 + z_0 = z_0 + z_1 h(1-z_0).\)
+Note \(h(1-z_0) < 1\), so \(w_{0,\text{team}}\) is between \(z_0\) and
+\(z_1\). In fact, since typically \(z_1 \gg z_0\) and \(h\) might not
+be extremely small, this wage can be substantially higher than
+\(z_0\). In equilibrium, all juniors would receive this team wage
+(because any junior not in a team could be hired by some senior for at
+least this much). We can rewrite it as: 
+\begin{equation}
+w_0 = z_1[1 - h
+(1-z_0)]. \tag{6}
+\end{equation}
+This is the {junior's wage in Case 2}.
+They essentially get a cut of the senior's high productivity. The
+{wage ratio} now is:
+\(\frac{w_1}{w_0} = \frac{z_1}{z_1[1 - h(1-z_0)]} = \frac{1}{1 - h(1-z_0)}.\)
+This ratio is \textgreater1 (since the denominator \textless1), but
+notably it no longer depends on the skill gap \(z_1 - z_0\). In fact,
+in this junior-scarce regime, the {relative wage is lower} than
+in Case 1 if \(z_1 - z_0\) is significant. (Because in Case 1,
+\(w_1/w_0\) grows with \(z_1\); in Case 2, \(w_1/w_0\) is fixed by
+\(h\) and \(z_0\).)
 
-  Thus in Case 1, {senior wage}
-  \(w_1 = \frac{z_1 - z_0}{h(1-z_0)}\), while {junior wage}
-  \(w_0 = z_0\). We observe that seniors capture all the {surplus}
-  from teamwork above what juniors could produce alone. Juniors are paid
-  just their solo productivity, and the extra output that comes from the
-  senior's guidance accrues to the senior. This wage structure reflects
-  the {bargaining power of scarce seniors}: they are the limiting
-  resource, so they can demand a high wage. The {wage ratio} here
-  is: $ \frac{w_1}{w_0} ;=; \frac{z_1 - z_0}{\,h\,z_0\,(1-z_0)\,},.
-  \tag{5}$ This can be much larger than 1, indicating significant
-  inequality in favor of seniors when seniors are scarce.
-
-  {GDP in Case 1:} In aggregate, all \(L_1\) seniors will form
-  teams and produce \(\frac{z_1}{h(1-z_0)}\) each, while the leftover
-  juniors (those not in teams) work solo producing \(z_0\) each. The
-  number of juniors in teams is \(n_0 L_1 = \frac{L_1}{h(1-z_0)}\). If
-  \(L_0 > n_0 L_1\), then \(L_0 - \frac{L_1}{h(1-z_0)}\) juniors are
-  solo. So total output (GDP) is:
-  \(Y = L_1 \left(\frac{z_1}{h(1-z_0)}\right) + \left(L_0 - \frac{L_1}{h(1-z_0)}\right) z_0.\)
-  Simplifying, $ Y = \frac{L_1\,(z_1 - z_0)}{\,h(1-z_0)\,} +
-  L\_0,z\_0.$ The first term is output from teams (which equals total
-  senior wages \(L_1 w_1\)), and the second term is output from solo
-  juniors (equal to their wages \(L_0 w_0\)). This economy's GDP is
-  higher than it would be without teams, due to the productivity boost
-  of seniors collaborating with juniors.
-
-  We should note a {participation constraint}: seniors will only
-  agree to work in a team (bearing the hassle of mentoring) if they earn
-  at least what they could get by working solo. A senior's solo outside
-  option is \(z_1\). In Case 1, do they get at least that? The condition
-  \(w_1 \ge z_1\) implies: \(\frac{z_1 - z_0}{\,h(1-z_0)\,} \ge z_1.\)
-  This rearranges to $ z\_1 ;\ge; \frac{z_0}{\,1 - h(1-z_0)\,},.
-  \tag{PC}$ This inequality is assumed to hold by parameter choice (the
-  problem statement notes we assume parameters such that the
-  participation constraint holds). Intuitively, it requires the senior's
-  skill advantage \(z_1 - z_0\) and the leverage factor \(1/[h(1-z_0)]\)
-  be large enough that team output exceeds the sum of what the senior
-  and juniors could do separately. If this holds, seniors willingly form
-  teams (it is indeed optimal for them). We will maintain this
-  assumption so that teamwork is viable; otherwise, if \(w_1 < z_1\), a
-  senior might prefer to dismiss the juniors and just solve problems
-  alone.
-\item
-  {Case 2: Juniors are the bottleneck (Junior-scarce, ``Too many
-  seniors'').} Now consider the opposite situation: \(L_0 < n_0 \,L_1\).
-  There are not enough juniors to utilize all seniors' capacity. In
-  fact, in this case every junior can join a team, and some seniors will
-  still be left without a junior partner. Juniors become the scarce
-  factor. In equilibrium, junior wages will be bid {above} their
-  solo productivity because seniors compete to get them on their team.
-
-  Specifically, when seniors are abundant, a senior who fails to hire a
-  junior would have to work alone and earn \(z_1\). But a senior with a
-  junior (or ideally \(n_0\) juniors) can achieve higher output. So
-  seniors are willing to pay a premium to attract juniors. The
-  equilibrium will equalize the benefit: some seniors end up solo and
-  earn \(z_1\), while those with teams get the team output minus what
-  they paid juniors. In a competitive equilibrium, no arbitrage implies
-  a senior is indifferent between working solo or hiring juniors at the
-  going wage.
-
-  In Case 2, the {senior wage gets pushed down to their solo
-  output}: \(w_1 = z_1.\) Seniors are no longer capturing a big surplus;
-  if they tried to demand more, firms would just use an extra senior in
-  place of a costly one (since seniors are plentiful). Meanwhile,
-  {juniors capture all the surplus from teamwork}. The logic: a
-  junior joining a team enables the senior to go from \(z_1\) output
-  (solo) to \(\frac{z_1}{h(1-z_0)}\) output. That gain is
-  \(\frac{z_1}{h(1-z_0)} - z_1\). With juniors scarce, they can bargain
-  for (almost) that entire gain in their wage. Formally, if one senior
-  can only hire \(n_0\) juniors, the total team output minus the
-  senior's outside option is the pool to pay juniors. For one senior
-  with \(n_0\) juniors:
-  \(\text{Surplus from team} = \frac{z_1}{h(1-z_0)} - z_1.\) This must
-  equal the total premium paid to juniors above their next best option.
-  Juniors' next best is working solo for \(z_0\). So if the junior team
-  wage is \(w_{0,\text{team}}\), the premium per junior is
-  \(w_{0,\text{team}} - z_0\). With \(n_0\) juniors,
-  \(n_0 (w_{0,\text{team}} - z_0)\) should equal the surplus:
-  \(n_0 (w_{0,\text{team}} - z_0) = \frac{z_1}{h(1-z_0)} - z_1.\) Using
-  \(n_0 = \frac{1}{h(1-z_0)}\), this yields:
-  \(w_{0,\text{team}} = \frac{z_1}{\,h(1-z_0) n_0\,} - \frac{z_1}{n_0} + z_0 = \frac{z_1}{\,h(1-z_0)\,} \frac{1}{n_0} - \frac{z_1}{n_0} + z_0.\)
-  But \(1/n_0 = h(1-z_0)\). Simplifying:
-  \(w_{0,\text{team}} = z_1\, [h(1-z_0)] - 0 + z_0 = z_0 + z_1 h(1-z_0).\)
-  Note \(h(1-z_0) < 1\), so \(w_{0,\text{team}}\) is between \(z_0\) and
-  \(z_1\). In fact, since typically \(z_1 \gg z_0\) and \(h\) might not
-  be extremely small, this wage can be substantially higher than
-  \(z_0\). In equilibrium, all juniors would receive this team wage
-  (because any junior not in a team could be hired by some senior for at
-  least this much). We can rewrite it as: $ w\_0 = z\_1,{[}1 - h
-  (1-z\_0){]},. \tag{6}$ This is the {junior's wage in Case 2}.
-  They essentially get a cut of the senior's high productivity. The
-  {wage ratio} now is:
-  \(\frac{w_1}{w_0} = \frac{z_1}{\,z_1[1 - h(1-z_0)]\,} = \frac{1}{\,1 - h(1-z_0)\,}\,.\)
-  This ratio is \textgreater1 (since the denominator \textless1), but
-  notably it no longer depends on the skill gap \(z_1 - z_0\). In fact,
-  in this junior-scarce regime, the {relative wage is lower} than
-  in Case 1 if \(z_1 - z_0\) is significant. (Because in Case 1,
-  \(w_1/w_0\) grows with \(z_1\); in Case 2, \(w_1/w_0\) is fixed by
-  \(h\) and \(z_0\).)
-
-  Intuitively, when juniors are scarce, even a very high-skill senior
-  cannot command a huge premium because they desperately need juniors to
-  leverage their skill. Juniors then receive a large share of the value
-  (they ``capture the rent'' from the teamwork). By contrast, in
-  senior-scarce scenario, the senior could name their price since
-  juniors had nowhere else to get the premium.
-\end{itemize}
+Intuitively, when juniors are scarce, even a very high-skill senior
+cannot command a huge premium because they desperately need juniors to
+leverage their skill. Juniors then receive a large share of the value
+(they ``capture the rent'' from the teamwork). By contrast, in
+senior-scarce scenario, the senior could name their price since
+juniors had nowhere else to get the premium.
 
 In summary, our static model yields two distinct regimes for wage
 inequality. {In Case 1 (many juniors), seniors capture most of
@@ -404,8 +418,7 @@ literature: technologies that complement high-skill workers can increase
 inequality if high-skill workers are scarce, but if lower-skill workers
 improve their capabilities, the gap narrows.)}
 
-\subsection{Introducing AI as a Team
-Member}\label{introducing-ai-as-a-team-member}
+\subsection{Introducing AI as a Team Member}\label{introducing-ai-as-a-team-member}
 
 We now extend the model to include {AI (artificial intelligence)}
 as a potential ``worker'' in the team. We consider an AI system that
@@ -440,12 +453,12 @@ can use as many ``AI juniors'' as they want, limited only by time.
 Suppose a senior can choose to work with {\(n_A\) units of AI}
 (multiple AI instances or simply scaling usage). Similar to before, if
 the senior allocates all their time to handling the AI's unsolved
-problems: \(n_A (1 - z_A)\, h_A = 1,\) giving
-\(n_A = \frac{1}{\,h_A(1-z_A)\,}.\) This mirrors (1). Essentially, a
+problems: \(n_A (1 - z_A) h_A = 1,\) giving
+\(n_A = \frac{1}{h_A(1-z_A)}.\) This mirrors (1). Essentially, a
 single senior can now leverage up to \(1/[h_A(1-z_A)]\) AI processes in
 parallel. The {output per senior with AI} would be: $
-Q\_\{\text{with AI per senior}\} = n\_A z\_A + n\_A (z\_1 - z\_A) =
-n\_A, z\_1 = \frac{z_1}{\,h_A(1-z_A)\,},. \tag{7}$ So substituting
+Q_\{\text{with AI per senior}\} = n_A z_A + n_A (z_1 - z_A) =
+n_A, z_1 = \frac{z_1}{h_A(1-z_A)},. \tag{7}$ So substituting
 ``A'' for ``0'' in the earlier team formula, we see the structure is
 analogous. If \(z_A\) and \(h_A\) are comparable to a junior's
 \(z_0, h\), then an AI can similarly boost the senior's productivity.
@@ -471,9 +484,9 @@ Comparing senior's payoff in two options:
   \(\frac{z_1}{h_A(1-z_A)}\) (since no juniors to pay).
 \end{itemize}
 
-The senior will prefer AI if: $ \frac{z_1}{\,h_A(1-z_A)\,}
-;\textgreater; \frac{z_1 - z_0}{\,h(1-z_0)\,},. \tag{8}$ Rearranging,
-this inequality is: $ \frac{h(1-z_0)}{\,h_A(1-z_A)\,} ;\textgreater; 1
+The senior will prefer AI if: $ \frac{z_1}{h_A(1-z_A)}
+;\textgreater; \frac{z_1 - z_0}{h(1-z_0)},. \tag{8}$ Rearranging,
+this inequality is: $ \frac{h(1-z_0)}{h_A(1-z_A)} ;\textgreater; 1
 - \frac{z_0}{z_1},. \tag{9}$
 
 This condition says that the {relative efficiency} of AI (the LHS
@@ -507,59 +520,51 @@ binding constraint.
 Under condition (8), a {senior's optimal choice} is to employ AI
 exclusively and {hire zero juniors}. In that outcome:
 
-\begin{itemize}
+All juniors are effectively {pushed out} of teams. They must
+either find solo work or remain underemployed. Given our model, they
+would revert to working solo on problems (output \(z_0\) each).
 
-\item
-  All juniors are effectively {pushed out} of teams. They must
-  either find solo work or remain underemployed. Given our model, they
-  would revert to working solo on problems (output \(z_0\) each).
-\item
-  Each senior now works with their AI helpers and produces output
-  \(\frac{z_1}{h_A(1-z_A)}\). The {senior's wage} would adjust to
-  reflect their new productivity (if seniors are still scarce, they
-  capture it; if seniors became abundant relative to remaining team
-  opportunities, wages might equalize differently, but presumably if all
-  seniors adopt AI, juniors are no longer a limiting factor at all).
-\end{itemize}
+Each senior now works with their AI helpers and produces output
+\(\frac{z_1}{h_A(1-z_A)}\). The {senior's wage} would adjust to
+reflect their new productivity (if seniors are still scarce, they
+capture it; if seniors became abundant relative to remaining team
+opportunities, wages might equalize differently, but presumably if all
+seniors adopt AI, juniors are no longer a limiting factor at all).
 
 We are especially interested in the {impact on output and wages}
 in this scenario:
 
-\begin{itemize}
+{Output per senior with AI} is given by (7) above. Comparing
+(7) to the old team output (2), we see two changes: \(z_0\) is
+replaced by \(z_A\), and \(h\) by \(h_A\). If AI is ``better'' than
+juniors (say \(z_A > z_0\) or \(h_A < h\)), then obviously a senior+AI
+team outperforms a senior+human team. But even if AI were equivalent
+in skill and cost, the {allocation of surplus} differs -- seniors
+now get {all} of it.
 
-\item
-  {Output per senior with AI} is given by (7) above. Comparing
-  (7) to the old team output (2), we see two changes: \(z_0\) is
-  replaced by \(z_A\), and \(h\) by \(h_A\). If AI is ``better'' than
-  juniors (say \(z_A > z_0\) or \(h_A < h\)), then obviously a senior+AI
-  team outperforms a senior+human team. But even if AI were equivalent
-  in skill and cost, the {allocation of surplus} differs -- seniors
-  now get {all} of it.
-\item
-  {Wages:} In the new equilibrium, what are wages? All juniors
-  are essentially relegated to solo work, earning \(w_0 = z_0\) (since
-  they can't command any premium; seniors aren't hiring them). Seniors,
-  using AI, can produce a lot more. If seniors remain the scarce factor,
-  one might expect \(w_1 = \frac{z_1}{h_A(1-z_A)}\) (the value of their
-  augmented output). However, if AI is sufficiently powerful, it might
-  increase the {effective supply of problem-solving capacity} such
-  that seniors are no longer so scarce. In our setting, since the number
-  of seniors hasn't changed, seniors likely still remain the only ones
-  who can solve the hardest problems, so they probably still earn a
-  premium. For simplicity, assume \(L_0\) is large enough (and juniors
-  not used) so that we remain in a regime analogous to Case 1: seniors
-  capture the surplus. Then: $ w\_1 = \frac{z_1}{\,h_A(1-z_A)\,},
-  \qquad w\_0 = z\_0.$ The {wage ratio with AI} (under these
-  assumptions) becomes:
-  \(\frac{w_1}{w_0} = \frac{z_1}{\,h_A (1-z_A) \, z_0}\,.\) This is
-  typically {even higher} than the original ratio (5), since
-  \(h_A\) is likely not greater than \(h\), and \(1-z_A \le 1-z_0\) if
-  \(z_A \ge z_0\). In words, if AI replaces juniors, {inequality
-  spikes}: seniors' productivity (and pay) shoot up, while juniors fall
-  back to low-productivity solo work earning \(z_0\). We've shifted to a
-  world somewhat akin to Case 1 (seniors with teams) but where the
-  ``teams'' are AI and the juniors' labor is largely sidelined.
-\end{itemize}
+{Wages:} In the new equilibrium, what are wages? All juniors
+are essentially relegated to solo work, earning \(w_0 = z_0\) (since
+they can't command any premium; seniors aren't hiring them). Seniors,
+using AI, can produce a lot more. If seniors remain the scarce factor,
+one might expect \(w_1 = \frac{z_1}{h_A(1-z_A)}\) (the value of their
+augmented output). However, if AI is sufficiently powerful, it might
+increase the {effective supply of problem-solving capacity} such
+that seniors are no longer so scarce. In our setting, since the number
+of seniors hasn't changed, seniors likely still remain the only ones
+who can solve the hardest problems, so they probably still earn a
+premium. For simplicity, assume \(L_0\) is large enough (and juniors
+not used) so that we remain in a regime analogous to Case 1: seniors
+capture the surplus. Then: $ w_1 = \frac{z_1}{h_A(1-z_A)},
+\qquad w_0 = z_0.$ The {wage ratio with AI} (under these
+assumptions) becomes:
+\(\frac{w_1}{w_0} = \frac{z_1}{h_A (1-z_A)  z_0}.\) This is
+typically {even higher} than the original ratio (5), since
+\(h_A\) is likely not greater than \(h\), and \(1-z_A \le 1-z_0\) if
+\(z_A \ge z_0\). In words, if AI replaces juniors, {inequality
+spikes}: seniors' productivity (and pay) shoot up, while juniors fall
+back to low-productivity solo work earning \(z_0\). We've shifted to a
+world somewhat akin to Case 1 (seniors with teams) but where the
+``teams'' are AI and the juniors' labor is largely sidelined.
 
 From a {static output} perspective, introducing AI in this way
 unambiguously {raises GDP}. Previously, one senior with \(n_0\)
@@ -568,7 +573,7 @@ juniors produced \(z_1/[h(1-z_0)]\). Now each senior produces
 adoption). Plus, the juniors still produce something on their own (each
 junior can still solve some easy problems solo, contributing \(z_0\)
 each). So the new total GDP is:
-\(Y_{\text{AI}} = L_1 \frac{z_1}{\,h_A(1-z_A)\,} + L_0 \, z_0.\) This is
+\(Y_{\text{AI}} = L_1 \frac{z_1}{h_A(1-z_A)} + L_0  z_0.\) This is
 {at least as large as} the no-AI GDP we wrote earlier, and indeed
 greater given (8). Thus, in a static sense, AI raises efficiency -- no
 surprise there. We get {more output} because seniors can handle
@@ -639,7 +644,7 @@ In steady state, the {stock of seniors \(L_1\)} evolves according
 to: new seniors come from two sources -- the \(\phi \delta L\) who are
 born as seniors, and those promoted via learning -- and seniors exit due
 to death. Because at steady state \(L_1\) is constant, we have:
-\(\delta L_1 = \delta L\,\phi \;+\; \text{(promotions from junior to senior per unit time)}.\)
+\(\delta L_1 = \delta L\phi + \text{(promotions from junior to senior per unit time)}.\)
 How many promotions occur? Only juniors {working on teams} with
 seniors can learn at rate \(\lambda\). If a junior is working solo,
 there is no senior to learn from, so we assume no progression (one could
@@ -656,7 +661,7 @@ Divide through by \(\delta L\) to get seniors as a fraction of
 population \(L_1/L\):
 \(\frac{L_1}{L} = \frac{\phi + \frac{\lambda}{\delta} \frac{L_1}{L} n_0}{1}.\)
 Solving, $ \frac{L_1}{L} =
-\frac{\phi}{\,1 - \frac{\lambda}{\delta} n_0\,},. \tag{10}$
+\frac{\phi}{1 - \frac{\lambda}{\delta} n_0},. \tag{10}$
 
 This is the steady-state share of seniors including the effect of
 learning. Because \(n_0 = \frac{1}{h(1-z_0)}\), we can rewrite the
@@ -685,17 +690,17 @@ we keep it below the Case 1 to Case 2 flip point).
 What is the {steady-state output per capita} without AI? Using
 the same approach as static but weighting by the new \(L_1, L_0\), we
 have:
-\(\frac{Y_{\text{no AI, steady}}}{L} = \frac{L_1}{L} \frac{z_1 - z_0}{\,h(1-z_0)\,} + \frac{L_0}{L} z_0.\)
+\(\frac{Y_{\text{no AI, steady}}}{L} = \frac{L_1}{L} \frac{z_1 - z_0}{h(1-z_0)} + \frac{L_0}{L} z_0.\)
 Substitute \(L_1/L\) from (10) and \(L_0/L = 1 - L_1/L\):
 
 \begin{align*}
-\frac{Y\_{\text{no AI}}}{L} &= \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z\_0)},} \cdot \frac{z\_1 - z\_0}{,h(1-z\_0),} ;+; \Big\[1 - \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z\_0)},}\Big] z\_0 \\
-&= z\_0 ;+; \frac{\phi (z\_1 - z\_0)}{,h(1-z\_0) - \frac{\lambda}{\delta},} ;-; \frac{\phi, z\_0}{,1 - \frac{\lambda}{\delta h(1-z\_0)},},.
+\frac{Y_{\text{no AI}}}{L} &= \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},} \cdot \frac{z_1 - z_0}{,h(1-z_0),} ;+; \Big[1 - \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},}\Big] z_0 \\
+&= z_0 ;+; \frac{\phi (z_1 - z_0)}{,h(1-z_0) - \frac{\lambda}{\delta},} ;-; \frac{\phi, z_0}{,1 - \frac{\lambda}{\delta h(1-z_0)},},.
 \end{align*}
 
 After some algebra, this simplifies to: $ \frac{Y_{\text{no AI}}}{L} =
-z\_0 ;+;
-\phi \frac{\,z_1 - z_0[\,1 + h (1-z_0)\,]\,}{\,h(1-z_0) - \frac{\lambda}{\delta}\,},.
+z_0 ;+;
+\phi \frac{z_1 - z_0[1 + h (1-z_0)]}{h(1-z_0) - \frac{\lambda}{\delta}},.
 \tag{11}$ One can verify that \(\partial (Y/L)/\partial \lambda > 0\);
 increasing the learning rate \(\lambda\) raises steady-state output per
 capita (because more workers end up as high-skill). In the limit of no
@@ -714,8 +719,8 @@ adoption eliminates the mentoring pathway). Each senior still produces a
 high output \(\frac{z_1}{h_A(1-z_A)}\) with AI. Juniors remain juniors
 (fraction \(1-\phi\) of pop) and work solo for output \(z_0\) each. So
 the {steady-state per-capita output with AI} is: $
-\frac{Y_{\text{AI, steady}}}{L} = \phi \frac{z_1}{\,h_A(1-z_A)\,} +
-(1-\phi) z\_0. \tag{12}$
+\frac{Y_{\text{AI, steady}}}{L} = \phi \frac{z_1}{h_A(1-z_A)} +
+(1-\phi) z_0. \tag{12}$
 
 The crucial question is: {which steady state yields higher output,
 with or without AI?} It is not obvious because {AI boosts current
@@ -742,9 +747,9 @@ than a scenario with no AI but continual skill development.
 
 Deriving the precise inequality, from (11) and (12), one condition for
 \(Y_{\text{AI}}/L < Y_{\text{no AI}}/L\) turns out to be: $
-\frac{z_1}{\,h_A(1-z_A)\,} - z\_0 ;\textless;
-\frac{z_1 - z_0}{\,h(1-z_0) - \frac{\lambda}{\delta}\,} -
-\frac{z_0}{\,1 - \frac{\lambda}{\delta h(1-z_0)}\,}. \tag{13}$ This
+\frac{z_1}{h_A(1-z_A)} - z_0 ;\textless;
+\frac{z_1 - z_0}{h(1-z_0) - \frac{\lambda}{\delta}} -
+\frac{z_0}{1 - \frac{\lambda}{\delta h(1-z_0)}}. \tag{13}$ This
 expression basically asks whether the {AI-driven senior output
 advantage} (\(\frac{z_1}{h_A(1-z_A)} - z_0\), i.e.~how much more a
 senior+AI produces over a junior's output) is smaller than the
@@ -755,9 +760,9 @@ inequality can hold even if AI has a strong static benefit.
 
 To give intuition: if \(\lambda = 0\) (no learning), the RHS of (13)
 reduces to \(\frac{z_1 - z_0}{h(1-z_0)} - z_0\), which is exactly $
-\frac{z_1}{h(1-z_0)} - (z\_0 + \frac{z_1 - z_0}{h(1-z_0)}) =
+\frac{z_1}{h(1-z_0)} - (z_0 + \frac{z_1 - z_0}{h(1-z_0)}) =
 \frac{z_1}{h(1-z_0)} - \frac{z_1}{h(1-z_0)} = 0$. So the inequality
-says AI decreases output if $ \frac{z_1}{h_A(1-z_A)} - z\_0 \textless{}
+says AI decreases output if $ \frac{z_1}{h_A(1-z_A)} - z_0 \textless{}
 0$, which would {never} be true if \(z_1 > z_0\). So with
 \(\lambda=0\), AI always helps or at least doesn't hurt output (as
 expected). As \(\lambda\) grows, the RHS increases, eventually possibly
@@ -810,8 +815,8 @@ Meanwhile, the value of being a solo junior is
 promotion). Indifference requires \(J = J_{\text{solo}}\). Solving the
 Bellman:
 \(J = \frac{w_{0,\text{team}} + \lambda \frac{w_1}{\delta}}{\delta + \lambda},\)
-and setting \(J = z_0/\delta\), we get: $ w\_\{0,\text{team}\} = z\_0 -
-\frac{\lambda}{\delta}(w\_1 - z\_0). \tag{14}$ This means juniors on a
+and setting \(J = z_0/\delta\), we get: $ w_\{0,\text{team}\} = z_0 -
+\frac{\lambda}{\delta}(w_1 - z_0). \tag{14}$ This means juniors on a
 team might accept a wage {below} \(z_0\) (their static marginal
 product) if \(w_1 > z_0\) and \(\lambda>0\), because they expect to
 recoup it when they become seniors. In other words, they effectively pay
@@ -824,8 +829,8 @@ If (14) holds, the senior's surplus from a team is even larger because
 juniors are cheaper labor. In fact, substituting this
 \(w_{0,\text{team}}\) into the senior's team wage formula, one finds:
 \(w_1 = \frac{z_1}{h(1-z_0)} - n_0 w_{0,\text{team}} = \frac{z_1}{h(1-z_0)} - \frac{1}{h(1-z_0)}\Big(z_0 - \frac{\lambda}{\delta}(w_1 - z_0)\Big).\)
-Solving for \(w_1\) gives: $ w\_1 =
-\frac{\frac{z_1 - z_0}{h(1-z_0)} + \frac{\lambda}{\delta}\frac{z_0}{h(1-z_0)}}{\,1 + \frac{\lambda}{\delta h(1-z_0)}\,}.
+Solving for \(w_1\) gives: $ w_1 =
+\frac{\frac{z_1 - z_0}{h(1-z_0)} + \frac{\lambda}{\delta}\frac{z_0}{h(1-z_0)}}{1 + \frac{\lambda}{\delta h(1-z_0)}}.
 \tag{15}$ This is the senior wage when juniors fully internalize
 learning (in equilibrium \(w_1\) is determined by a fixed point). One
 can check that this \(w_1\) is lower than the previous
@@ -839,7 +844,7 @@ already willing to undercut their wage for training, a senior's private
 benefit of replacing them with AI is smaller. We would modify the
 {AI adoption condition} (8) to compare \(w_1\) from (15) (team
 with learning-internalizing juniors) to the AI output. The condition for
-AI use becomes: $ w\_1 \text{ (with learning-internalizing juniors) }
+AI use becomes: $ w_1 \text{ (with learning-internalizing juniors) }
 \textless{} \frac{z_1}{h_A(1-z_A)}. \tag{16}$ Substituting (15) for
 \(w_1\), this inequality is more complex, but the key insight is:
 {if juniors value learning, they effectively subsidize the team,
@@ -869,173 +874,162 @@ Our model highlights a {dynamic externality} in the adoption of
 AI in skilled work: the loss of learning opportunities for junior
 workers. This connects to several strands of literature:
 
-\begin{itemize}
-\item
-  {Learning-by-doing and dynamic inefficiencies:} The idea that
-  current production can build future human capital has a long history
-  in economics (Arrow, 1962; Lucas, 1988). In those models, firms or
-  workers do not fully internalize the benefit of the skills they
-  accumulate for society's future, leading to underinvestment in
-  learning. In our setup, the externality is explicit: when a senior
-  chooses AI over mentoring a junior, the senior ignores the fact that
-  one less junior will become a high-skill worker. This is a social loss
-  not reflected in the senior's private payoff. Our results echo themes
-  in Acemoglu's work on automation: he argues that there can be
-  {excessive automation} because firms adopt cost-saving
-  technologies without considering the negative effect on workers' skill
-  acquisition and earnings. Acemoglu \& Restrepo (2018, 2020) emphasize
-  that automation needs to be counterbalanced by new tasks for labor;
-  otherwise, workers get displaced and aggregate gains may be smaller
-  than anticipated. In our model, training juniors can be viewed as
-  creating ``new skilled workers'' (akin to new task opportunities for
-  labor in the future). If AI halts that, the long-run supply of skilled
-  labor is lower, potentially reducing innovation or productivity down
-  the line.
-\item
-  {Rent-seeking and optimal incentives:} We drew a parallel to an
-  insight by Buera and co-authors (2025). They study dynamic competition
-  in oligopolies and find that private incentives can deviate from
-  social optima due to dynamic considerations (firms do not internalize
-  the full social benefit of more competition or innovation). However,
-  they also show that {dynamic competition alone doesn't always
-  justify intervention} -- in some cases the equilibrium can be
-  constrained-efficient. The analogy in our context would be: is the
-  private outcome (seniors replacing juniors with AI) inefficient, or
-  could it be constrained-efficient? If seniors are scarce and capture
-  rents, they undervalue the creation of new seniors (since that would
-  erode their future rents). This likely leads to {under-provision
-  of training} relative to the social optimum. Even if seniors
-  internalize juniors' learning (via lower wages), the senior is just
-  extracting that value; the junior's presence still creates a positive
-  externality for others (e.g., future firms or the economy benefit from
-  having more skilled workers beyond the senior's own firm). Thus, we
-  suspect the market equilibrium is tilted toward too much AI adoption
-  from a social viewpoint, whenever learning externalities are
-  significant. This is a form of dynamic inefficiency where regulators
-  or policy might want to intervene -- akin to subsidizing training or
-  taxing automation. Buera et al.'s framework is different (firms and
-  innovation), but the common theme is balancing static gains with
-  dynamic considerations. In Buera's model, the government might
-  subsidize entrants to maintain competition; in our model, one could
-  imagine {incentives for firms to hire and train juniors} even
-  if AI is available, to sustain human capital formation.
-\item
-  {Evidence on AI's impact on training and skills:} Given that
-  generative AI is a very recent technology, hard empirical evidence on
-  long-run skill dynamics is limited. However, early studies and surveys
-  provide hints:
+{Learning-by-doing and dynamic inefficiencies:} The idea that
+current production can build future human capital has a long history
+in economics (Arrow, 1962; Lucas, 1988). In those models, firms or
+workers do not fully internalize the benefit of the skills they
+accumulate for society's future, leading to underinvestment in
+learning. In our setup, the externality is explicit: when a senior
+chooses AI over mentoring a junior, the senior ignores the fact that
+one less junior will become a high-skill worker. This is a social loss
+not reflected in the senior's private payoff. Our results echo themes
+in Acemoglu's work on automation: he argues that there can be
+{excessive automation} because firms adopt cost-saving
+technologies without considering the negative effect on workers' skill
+acquisition and earnings. Acemoglu \& Restrepo (2018, 2020) emphasize
+that automation needs to be counterbalanced by new tasks for labor;
+otherwise, workers get displaced and aggregate gains may be smaller
+than anticipated. In our model, training juniors can be viewed as
+creating ``new skilled workers'' (akin to new task opportunities for
+labor in the future). If AI halts that, the long-run supply of skilled
+labor is lower, potentially reducing innovation or productivity down
+the line.
 
-  \begin{itemize}
-  
-  \item
-    As noted earlier, Hess et al.~(2023) find that in jobs with high
-    automation risk, {workers and firms invest less in training}.
-    This aligns with our model's implication that firms might cut back
-    on developing junior talent if they plan to automate roles.
-    Muehlemann (2024) finds that {AI adoption in German firms led
-    to reduced training for current workers, but an increase in
-    apprenticeship contracts}. The latter suggests some firms anticipate
-    needing skilled workers who know how to work with AI, so they ramp
-    up apprentice programs. In our terms, that would be like trying to
-    ensure juniors are still coming up the pipeline, perhaps in a more
-    AI-centric way.
-  \item
-    There is anecdotal evidence of companies {reducing
-    entry-level hiring} because of AI. For example, some law firms have
-    slowed hiring of junior lawyers as AI can do first drafts of
-    contracts and research. In programming, one hears quotes like
-    {``why hire juniors when a single senior with AI can do the
-    job?''}. Our model formalizes the logic behind such quotes. But
-    commentators warn that this is short-sighted: junior roles today are
-    how seniors of tomorrow are created.
-  \item
-    On the flip side, AI tools might serve as a {training device}.
-    The study by Brynjolfsson et al.~(2023) provides
-    {``proof-of-concept'' that generative AI can supplement human
-    learning}: in customer support, novice workers improved markedly
-    with AI help, essentially learning from AI's suggestions. Noy and
-    Zhang (2023) found less-skilled writers improved their writing
-    quality using ChatGPT, closing some gap with more-skilled writers.
-    These findings suggest a possible {complementary} path: instead
-    of replacing juniors, firms could give juniors AI tools to make them
-    productive and accelerate their learning. In our model's terms, that
-    would keep \(\lambda\) (learning) alive while also enjoying some of
-    AI's static benefits -- a potential win-win if done right.
-  \end{itemize}
-\item
-  {Policy responses:} If indeed there is a danger that the
-  pipeline of skill formation gets broken, what policies could mitigate
-  this? One idea is {incentivizing human-complementary uses of
-  AI} over pure automation. Acemoglu et al.~(2023) argue for directing
-  innovation towards augmenting workers rather than replacing them.
-  Concretely, they suggest measures like:
+{Rent-seeking and optimal incentives:} We drew a parallel to an
+insight by Buera and co-authors (2025). They study dynamic competition
+in oligopolies and find that private incentives can deviate from
+social optima due to dynamic considerations (firms do not internalize
+the full social benefit of more competition or innovation). However,
+they also show that {dynamic competition alone doesn't always
+justify intervention} -- in some cases the equilibrium can be
+constrained-efficient. The analogy in our context would be: is the
+private outcome (seniors replacing juniors with AI) inefficient, or
+could it be constrained-efficient? If seniors are scarce and capture
+rents, they undervalue the creation of new seniors (since that would
+erode their future rents). This likely leads to {under-provision
+of training} relative to the social optimum. Even if seniors
+internalize juniors' learning (via lower wages), the senior is just
+extracting that value; the junior's presence still creates a positive
+externality for others (e.g., future firms or the economy benefit from
+having more skilled workers beyond the senior's own firm). Thus, we
+suspect the market equilibrium is tilted toward too much AI adoption
+from a social viewpoint, whenever learning externalities are
+significant. This is a form of dynamic inefficiency where regulators
+or policy might want to intervene -- akin to subsidizing training or
+taxing automation. Buera et al.'s framework is different (firms and
+innovation), but the common theme is balancing static gains with
+dynamic considerations. In Buera's model, the government might
+subsidize entrants to maintain competition; in our model, one could
+imagine {incentives for firms to hire and train juniors} even
+if AI is available, to sustain human capital formation.
 
-  \begin{itemize}
-  
-  \item
-    Adjusting the {tax code}: currently, in the U.S., companies
-    can often save costs by investing in software/AI (capital) rather
-    than hiring workers, due to how labor is taxed (payroll taxes,
-    etc.). Making taxes neutral between hiring a person and deploying an
-    AI could remove an artificial incentive to cut jobs. Equivalently,
-    one could offer tax credits for training expenses or for maintaining
-    apprentice programs. If firms faced the true long-run cost of lost
-    human capital, they might choose a more balanced approach.
-  \item
-    {Training subsidies or requirements}: Governments could
-    subsidize firms that provide robust training to young workers, or
-    even mandate industries (like law, medicine) to maintain certain
-    residency/internship positions. Historically, some professions have
-    {guild-like systems} to ensure knowledge transfer. In an AI
-    era, we might need updated versions of these to ensure juniors still
-    get experience, perhaps focusing on tasks AI can't do (or overseeing
-    AI).
-  \item
-    {Worker voice and bargaining}: The CEPR columnsuggests that
-    giving workers more voice in tech implementation decisions could
-    help steer AI adoption in a worker-friendly direction. If junior
-    employees (or their unions) had a say, they might push for AI that
-    {helps them} rather than replaces them, or for maintaining
-    pathways to advancement. This is of course challenging if the
-    juniors are never hired to begin with -- a catch-22 -- but it speaks
-    to the need for broader stakeholder involvement.
-  \item
-    {Ensuring new task creation}: In the long run, entirely new
-    roles might emerge that juniors can fill and learn in, even if old
-    entry-level tasks are done by AI. For example, if AI handles coding,
-    perhaps {prompt engineering} or {AI supervision} becomes
-    the entry role. Some optimists believe AI will create more demand
-    for human judgment and soft skills, which could form the basis of
-    new junior positions. Our model does not incorporate new task
-    creation, but if we did, it could alleviate the dynamic loss
-    (Acemoglu \& Restrepo (2019) stress that new tasks for humans
-    historically accompanied automation). There may be a need for
-    {policies that encourage the development of new complementary
-    jobs} -- e.g., funding for R\&D in areas where humans can expand
-    work with AI rather than be replaced.
-  \end{itemize}
-\item
-  {Long-term distributional effects:} Our model has implications
-  for inequality that resonate with ongoing debates. In the short run,
-  AI may increase the productivity of top-skilled workers (seniors),
-  increasing the wage gap if they capture that value. Indeed,
-  {inequality could rise sharply} if AI is used in the Case 1
-  scenario. Acemoglu's recent paper (2024) suggests that even if AI
-  makes lower-skilled workers more productive in some tasks, it might
-  {still} increase inequality unless it's creating whole new
-  opportunities. Our model's Case 1 outcome with AI is an example:
-  juniors might improve a bit with AI, but if they're largely sidelined,
-  the gap widens. However, if juniors are scarce (Case 2), they could
-  benefit and inequality could decrease, at least initially. Over the
-  long run, if the supply of skilled workers doesn't grow (or even
-  shrinks relative to population because of no learning), we could see a
-  form of {skill premium persistence} or even a decline in
-  overall innovation. There is also a parallel to the literature on
-  {human capital and growth}: if one generation doesn't pass on
-  skills to the next, you can get stagnation. This is somewhat analogous
-  to some low-development traps where lack of skill transfer keeps
-  productivity low.
-\end{itemize}
+{Evidence on AI's impact on training and skills:} Given that
+generative AI is a very recent technology, hard empirical evidence on
+long-run skill dynamics is limited. However, early studies and surveys
+provide hints:
+
+As noted earlier, Hess et al.~(2023) find that in jobs with high
+automation risk, {workers and firms invest less in training}.
+This aligns with our model's implication that firms might cut back
+on developing junior talent if they plan to automate roles.
+Muehlemann (2024) finds that {AI adoption in German firms led
+to reduced training for current workers, but an increase in
+apprenticeship contracts}. The latter suggests some firms anticipate
+needing skilled workers who know how to work with AI, so they ramp
+up apprentice programs. In our terms, that would be like trying to
+ensure juniors are still coming up the pipeline, perhaps in a more
+AI-centric way.
+
+There is anecdotal evidence of companies {reducing
+entry-level hiring} because of AI. For example, some law firms have
+slowed hiring of junior lawyers as AI can do first drafts of
+contracts and research. In programming, one hears quotes like
+{``why hire juniors when a single senior with AI can do the
+job?''}. Our model formalizes the logic behind such quotes. But
+commentators warn that this is short-sighted: junior roles today are
+how seniors of tomorrow are created.
+
+On the flip side, AI tools might serve as a {training device}.
+The study by Brynjolfsson et al.~(2023) provides
+{``proof-of-concept'' that generative AI can supplement human
+learning}: in customer support, novice workers improved markedly
+with AI help, essentially learning from AI's suggestions. Noy and
+Zhang (2023) found less-skilled writers improved their writing
+quality using ChatGPT, closing some gap with more-skilled writers.
+These findings suggest a possible {complementary} path: instead
+of replacing juniors, firms could give juniors AI tools to make them
+productive and accelerate their learning. In our model's terms, that
+would keep \(\lambda\) (learning) alive while also enjoying some of
+AI's static benefits -- a potential win-win if done right.
+
+{Policy responses:} If indeed there is a danger that the
+pipeline of skill formation gets broken, what policies could mitigate
+this? One idea is {incentivizing human-complementary uses of
+AI} over pure automation. Acemoglu et al.~(2023) argue for directing
+innovation towards augmenting workers rather than replacing them.
+Concretely, they suggest measures like:
+
+Adjusting the {tax code}: currently, in the U.S., companies
+can often save costs by investing in software/AI (capital) rather
+than hiring workers, due to how labor is taxed (payroll taxes,
+etc.). Making taxes neutral between hiring a person and deploying an
+AI could remove an artificial incentive to cut jobs. Equivalently,
+one could offer tax credits for training expenses or for maintaining
+apprentice programs. If firms faced the true long-run cost of lost
+human capital, they might choose a more balanced approach.
+
+{Training subsidies or requirements}: Governments could
+subsidize firms that provide robust training to young workers, or
+even mandate industries (like law, medicine) to maintain certain
+residency/internship positions. Historically, some professions have
+{guild-like systems} to ensure knowledge transfer. In an AI
+era, we might need updated versions of these to ensure juniors still
+get experience, perhaps focusing on tasks AI can't do (or overseeing
+AI).
+
+{Worker voice and bargaining}: The CEPR columnsuggests that
+giving workers more voice in tech implementation decisions could
+help steer AI adoption in a worker-friendly direction. If junior
+employees (or their unions) had a say, they might push for AI that
+{helps them} rather than replaces them, or for maintaining
+pathways to advancement. This is of course challenging if the
+juniors are never hired to begin with -- a catch-22 -- but it speaks
+to the need for broader stakeholder involvement.
+
+{Ensuring new task creation}: In the long run, entirely new
+roles might emerge that juniors can fill and learn in, even if old
+entry-level tasks are done by AI. For example, if AI handles coding,
+perhaps {prompt engineering} or {AI supervision} becomes
+the entry role. Some optimists believe AI will create more demand
+for human judgment and soft skills, which could form the basis of
+new junior positions. Our model does not incorporate new task
+creation, but if we did, it could alleviate the dynamic loss
+(Acemoglu \& Restrepo (2019) stress that new tasks for humans
+historically accompanied automation). There may be a need for
+{policies that encourage the development of new complementary
+jobs} -- e.g., funding for R\&D in areas where humans can expand
+work with AI rather than be replaced.
+
+{Long-term distributional effects:} Our model has implications
+for inequality that resonate with ongoing debates. In the short run,
+AI may increase the productivity of top-skilled workers (seniors),
+increasing the wage gap if they capture that value. Indeed,
+{inequality could rise sharply} if AI is used in the Case 1
+scenario. Acemoglu's recent paper (2024) suggests that even if AI
+makes lower-skilled workers more productive in some tasks, it might
+{still} increase inequality unless it's creating whole new
+opportunities. Our model's Case 1 outcome with AI is an example:
+juniors might improve a bit with AI, but if they're largely sidelined,
+the gap widens. However, if juniors are scarce (Case 2), they could
+benefit and inequality could decrease, at least initially. Over the
+long run, if the supply of skilled workers doesn't grow (or even
+shrinks relative to population because of no learning), we could see a
+form of {skill premium persistence} or even a decline in
+overall innovation. There is also a parallel to the literature on
+{human capital and growth}: if one generation doesn't pass on
+skills to the next, you can get stagnation. This is somewhat analogous
+to some low-development traps where lack of skill transfer keeps
+productivity low.
 
 In terms of {empirics}, this is a nascent area. It will be
 interesting to see in a decade whether industries that heavily adopted
@@ -1087,50 +1081,47 @@ generative AI.
 We should note some {limitations and open questions} in our
 analysis:
 
-\begin{itemize}
 
-\item
-  We treated \(z_1, z_0, z_A, h, h_A\) as exogenous. In reality, these
-  could evolve. For example, \(z_A\) might improve over time as AI
-  learns from data (as per Wang \& Wong (2025) scenario). Also, human
-  skills \(z_0, z_1\) could respond to the presence of AI (educational
-  systems might train people differently if certain tasks are
-  automated). Incorporating such feedback is an important extension.
-\item
-  We assumed learning \(\lambda\) happens only through mentoring. Could
-  there be alternative pathways? Perhaps juniors could learn from AI (a
-  form of AI-driven training). If an AI can codify expert knowledge,
-  maybe juniors could acquire skills faster on their own. This would
-  mitigate the dynamic loss. Preliminary evidence (e.g., improved novice
-  performance with AI tools) gives credence to this possibility.
-  However, skeptics counter that true expertise often requires rich
-  tacit knowledge that comes from experience, not just AI advice. More
-  research (empirical and theoretical) is needed to understand AI's role
-  as a teacher vs.~as a crutch that {prevents} learning (as seen in
-  education contexts where students over-rely on AI and don't learn the
-  material).
-\item
-  Our equilibrium analysis with learning didn't delve into strategic
-  behavior much (except a brief mention of juniors internalizing
-  learning). In a dynamic game, one could ask: will seniors
-  {under-invest in training} juniors or even intentionally not pass
-  on knowledge to remain valuable (the classic ``knowledge hoarding''
-  problem)? How might that interact with AI adoption (since an
-  alternative to hoarding is just not having juniors at all)? These
-  nuances could be important in assessing whether the market
-  under-provides learning opportunities.
-\item
-  Finally, there's the question of {policy and welfare}: if we
-  determined that AI adoption is dynamically inefficient (i.e., society
-  would be better off in the long run if some juniors were trained),
-  what is the best way to achieve that? A blunt ban on AI in certain
-  tasks seems unlikely and inefficient. Incentive-based approaches (like
-  training subsidies or tax adjustments) are more promising and were
-  discussed above. One could formally model a social planner or
-  government that values future productivity and see what the optimal
-  intervention would be. This intersects with the literature on R\&D
-  policy and human capital externalities.
-\end{itemize}
+We treated \(z_1, z_0, z_A, h, h_A\) as exogenous. In reality, these
+could evolve. For example, \(z_A\) might improve over time as AI
+learns from data (as per Wang \& Wong (2025) scenario). Also, human
+skills \(z_0, z_1\) could respond to the presence of AI (educational
+systems might train people differently if certain tasks are
+automated). Incorporating such feedback is an important extension.
+
+We assumed learning \(\lambda\) happens only through mentoring. Could
+there be alternative pathways? Perhaps juniors could learn from AI (a
+form of AI-driven training). If an AI can codify expert knowledge,
+maybe juniors could acquire skills faster on their own. This would
+mitigate the dynamic loss. Preliminary evidence (e.g., improved novice
+performance with AI tools) gives credence to this possibility.
+However, skeptics counter that true expertise often requires rich
+tacit knowledge that comes from experience, not just AI advice. More
+research (empirical and theoretical) is needed to understand AI's role
+as a teacher vs.~as a crutch that {prevents} learning (as seen in
+education contexts where students over-rely on AI and don't learn the
+material).
+
+Our equilibrium analysis with learning didn't delve into strategic
+behavior much (except a brief mention of juniors internalizing
+learning). In a dynamic game, one could ask: will seniors
+{under-invest in training} juniors or even intentionally not pass
+on knowledge to remain valuable (the classic ``knowledge hoarding''
+problem)? How might that interact with AI adoption (since an
+alternative to hoarding is just not having juniors at all)? These
+nuances could be important in assessing whether the market
+under-provides learning opportunities.
+
+Finally, there's the question of {policy and welfare}: if we
+determined that AI adoption is dynamically inefficient (i.e., society
+would be better off in the long run if some juniors were trained),
+what is the best way to achieve that? A blunt ban on AI in certain
+tasks seems unlikely and inefficient. Incentive-based approaches (like
+training subsidies or tax adjustments) are more promising and were
+discussed above. One could formally model a social planner or
+government that values future productivity and see what the optimal
+intervention would be. This intersects with the literature on R\&D
+policy and human capital externalities.
 
 To conclude, our model provides a theoretical framework to think about
 the {long-term consequences of AI on the labor force's skill
@@ -1149,8 +1140,8 @@ contribution is to highlight the apprenticeship dimension of those
 dynamic effects in the age of AI, an area that will surely benefit from
 further research and data in the coming years.
 
-{Sources:}
 
+\section*{References}\label{references}
 \begin{itemize}
 
 \item
@@ -1196,3 +1187,5 @@ further research and data in the coming years.
   threatens apprenticeship and innovation; provides a practitioner
   perspective.{]}
 \end{itemize}
+\end{itemize}
+\end{document}
