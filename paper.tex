@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\title{AI, Teamwork, and the Dynamics of Skill Formation in the Workplace\\
+\normalsize Extended Abstract (8--10 pages)}
+\author{---}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Background and Motivation}
+
+Generative artificial intelligence (AI) is reshaping production tasks in knowledge‐intensive industries.  Many firms have begun \emph{replacing} entry-level roles with AI systems that draft contracts, write code, and prepare marketing copy \citep{Appelo2025}.  While seniors paired with AI enjoy large productivity gains \citep{BrynjolfssonLiRaymond2023}, economists have raised concern that eliminating junior positions today could reduce the supply of future experts, because juniors typically acquire tacit knowledge through mentorship \citep{Hess2023,Muehlemann2024}.  This paper develops a stylised model to study that dynamic trade-off.  We ask: under what conditions can AI raise long-run output, and when might it lower it by breaking the \emph{career ladder} that replenishes senior talent?
+
+The model extends the classic two–skill team framework of \citet{Garicano2000} by adding (i) an AI ``worker’’ with costless labour and (ii) a Poisson learning technology through which mentored juniors become seniors.  We connect the resulting efficiency and rent-sharing outcomes to recent theory on excessive automation \citep{AcemogluRestrepo2018,Acemoglu2024}, and to the dynamic competition logic in \citet{BueraBeraja2025}.
+
+\section{Model Setup}
+
+Problems have difficulty $Z\sim U(0,1)$.  A worker of skill $z$ solves any problem with $Z<z$ for sure.
+
+\begin{itemize}
+    \item \textbf{Juniors:} skill $z_{0}\in(0,1)$.
+    \item \textbf{Seniors:} skill $z_{1}>z_{0}$.
+\end{itemize}
+
+Solo output per unit time equals skill: a junior earns $w_{0}=z_{0}$, a senior $w_{1}=z_{1}$.
+
+\paragraph{Team production.}  One senior supervises $n_{0}$ juniors.  Each unsolved task passed upward costs $h<1$ units of the senior’s time.  Capacity implies
+\[
+n_{0} = \frac{1}{h(1-z_{0})}.
+\]
+Team output per senior is
+\[
+Q_{\text{team}} = \frac{z_{1}}{h(1-z_{0})},
+\]
+so the marginal return to senior skill equals $1/[h(1-z_{0})]>1$.
+
+\paragraph{Static labour‐market equilibrium.}  With supplies $(L_{1},L_{0})$ there are two regimes.
+\begin{enumerate}
+    \item \emph{Senior‐scarce} ($L_{0}>n_{0}L_{1}$): $w_{0}=z_{0}$ and 
+          $w_{1}=(z_{1}-z_{0})/h(1-z_{0})$.
+    \item \emph{Junior‐scarce} ($L_{0}<n_{0}L_{1}$): $w_{1}=z_{1}$ and
+          $w_{0}=z_{1}[1-h(1-z_{0})]$.
+\end{enumerate}
+Inequality ($w_{1}/w_{0}$) rises with $z_{1}$ and falls with $z_{0}$; its response to lower $h$ is regime dependent.
+
+\section{Introducing AI}
+
+AI behaves like a cost-free junior with skill $z_{A}$ and communication cost $h_{A}$.  
+Output per senior with AI only is 
+\[
+Q_{\text{AI}}=\frac{z_{1}}{h_{A}(1-z_{A})}.
+\]
+A senior replaces juniors iff
+\[
+\frac{z_{1}}{h_{A}(1-z_{A})} \;>\; \frac{z_{1}-z_{0}}{h(1-z_{0})}.  \tag{Adoption}
+\]
+Because no wage is paid to AI, the inequality holds even when $(z_{A},h_{A})=(z_{0},h)$.
+Static GDP rises but juniors are pushed into solo work, widening wage gaps in the senior-scarce regime.
+
+\section{Learning Dynamics}
+
+Population is constant ($L$).  Birth rate $\delta$, death rate $\delta$.
+A fraction $\phi$ of newborns are seniors; the rest are juniors.
+Juniors on teams become seniors with Poisson rate $\lambda$.
+
+In steady state (still senior-scarce) the senior share is
+\[
+\frac{L_{1}}{L} = \frac{\phi}{1-\lambda/[\delta h(1-z_{0})]} \;>\;\phi.
+\]
+Per-capita output without AI is
+\[
+\frac{Y_{\text{no AI}}}{L} \;=\; z_{0}+\phi\frac{z_{1}-z_{0}[1+h(1-z_{0})]}
+                                         {h(1-z_{0})-\lambda/\delta}.
+\]
+
+With AI (all juniors solo, no learning), the senior share stays $\phi$ and
+\[
+\frac{Y_{\text{AI}}}{L} \;=\; \phi\frac{z_{1}}{h_{A}(1-z_{A})} + (1-\phi)z_{0}.
+\]
+
+AI lowers long-run GDP iff
+\[
+\frac{z_{1}}{h_{A}(1-z_{A})} - z_{0}  
+  \;<\;
+\frac{z_{1}-z_{0}}{h(1-z_{0})-\lambda/\delta}
+  - 
+\frac{z_{0}}{1-\lambda/[\delta h(1-z_{0})]}.
+\]
+A larger $\lambda$ raises the right-hand side; learning externalities can therefore outweigh AI’s static gain.
+
+\section{Rent Sharing \& Junior Self-Funding}
+
+If juniors anticipate promotion, they accept a lower current wage:
+\[
+w_{0}^{\text{team}} = z_{0} - (\lambda/\delta)(w_{1}-z_{0}).
+\]
+Substituting into firm surplus yields a lower equilibrium $w_{1}$, dampening seniors’ private incentive to adopt AI, but \emph{not} removing the social‐learning externality.
+
+\section{Policy Implications}
+
+The model mirrors the dynamic inefficiency logic of \citet{BueraBeraja2025}: privately optimal AI adoption can be socially excessive when learning externalities matter.  Suggested interventions include:
+\begin{itemize}
+    \item Neutral tax treatment of capital versus labour to curb automation bias \citep{AcemogluEtAl2023}.
+    \item Training subsidies or apprenticeship mandates to maintain $\lambda$ \citep{Muehlemann2024}.
+    \item Promoting AI designs that \emph{complement} juniors, raising $z_{0}$ and possibly $\lambda$ \citep{BrynjolfssonLiRaymond2023}.
+\end{itemize}
+
+\section{Conclusion}
+
+AI can boost short-run productivity but may erode the learning channel that creates future experts.  When mentoring externalities are strong, laissez-faire adoption can reduce long-run output and widen inequality.  Balancing current gains with future human-capital formation is crucial for \emph{human-centric AI} policy \citep{AcemogluEtAl2023}.
+
+\begin{thebibliography}{}
+
+\bibitem[Acemoglu(2024)]{Acemoglu2024}
+Acemoglu,~D.\ (2024).
+\newblock \emph{The simple macroeconomics of AI}.
+\newblock Unpublished working paper.
+
+\bibitem[Acemoglu \& Restrepo(2018)]{AcemogluRestrepo2018}
+Acemoglu,~D., \& Restrepo,~P.\ (2018).
+\newblock The race between man and machine: implications of technology for growth, factor shares, and employment.
+\newblock \emph{American Economic Review}, 108(6), 1488--1542.
+
+\bibitem[Acemoglu, Johnson, {et~al.}(2023)]{AcemogluEtAl2023}
+Acemoglu,~D., Johnson,~S., et~al.\ (2023).
+\newblock \emph{Human‐centric AI}.
+\newblock CEPR Policy Insight~124.
+
+\bibitem[Appelo(2025)]{Appelo2025}
+Appelo,~J.\ (2025, March~26).
+\newblock AI wrecks the corporate career ladder.  Give juniors the steering wheel!
+\newblock \emph{Medium}.  
+
+\bibitem[Brynjolfsson, Li, \& Raymond(2023)]{BrynjolfssonLiRaymond2023}
+Brynjolfsson,~E., Li,~D., \& Raymond,~L.\ (2023).
+\newblock \emph{Generative AI at work}.
+\newblock (NBER Working Paper No.~31161, rev.\ November 2023).
+
+\bibitem[Buera \& Beraja(2025)]{BueraBeraja2025}
+Buera,~F.~J., \& Beraja,~M.\ (2025).
+\newblock \emph{The life-cycle of concentrated industries}.
+\newblock Manuscript.
+
+\bibitem[Garicano(2000)]{Garicano2000}
+Garicano,~L.\ (2000).
+\newblock Hierarchies and the organization of knowledge in production.
+\newblock \emph{Journal of Political Economy}, 108(5), 874--904.
+
+\bibitem[Hess, Janssen, \& Leber(2023)]{Hess2023}
+Hess,~P., Janssen,~S., \& Leber,~U.\ (2023).
+\newblock The effect of automation technology on workers’ training participation.
+\newblock \emph{Economics of Education Review}, 96, 102438.
+
+\bibitem[Lucas(1988)]{Lucas1988}
+Lucas,~R.~E.\ (1988).
+\newblock On the mechanics of economic development.
+\newblock \emph{Journal of Monetary Economics}, 22(1), 3--42.
+
+\bibitem[Muehlemann(2024)]{Muehlemann2024}
+Muehlemann,~S.\ (2024).
+\newblock \emph{AI adoption and workplace training} (IZA Discussion Paper No.~17367).
+
+\bibitem[Wang \& Wong(2025)]{WangWong2025}
+Wang,~P., \& Wong,~T.~N.\ (2025).
+\newblock Artificial intelligence and technological unemployment.
+\newblock (NBER Working Paper No.~33867).
+
+\end{thebibliography}
+
+\end{document}
