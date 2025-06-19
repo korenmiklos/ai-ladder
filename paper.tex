@@ -12,6 +12,9 @@
 
 \begin{document}
 \maketitle
+\begin{abstract}
+This paper develops a dynamic model of workplace skill formation under AI adoption. AI can substitute for junior workers, boosting short-run productivity but disrupting the apprenticeship ladder that produces future senior talent. We analyze how team production, learning-by-doing, and AI capabilities interact to shape wages, inequality, and long-run output. While AI enhances senior productivity, its displacement of juniors may lead to lower human capital in steady state. We derive conditions under which the dynamic loss outweighs the static gain, and discuss implications for inequality, labor market design, and optimal policy. The model highlights trade-offs between immediate efficiency and long-term skill development.
+\end{abstract}
 \section{Background and Motivation}\label{background-and-motivation}
 
 The rapid rise of artificial intelligence (AI), especially generative
@@ -186,12 +189,12 @@ senior per senior's time) is:
 \(Q_{\text{team per senior}} = n_0 z_0 + n_0 (z_1 - z_0) = n_0 z_1.\)
 Using the expression for \(n_0\) from (1), this becomes: 
 \begin{equation}
-Q_{\text{team per senior}}  =  \frac{z_1}{h(1 - z_0)},. \tag{2}
+Q_{\text{team per senior}}  =  \frac{z_1}{h(1 - z_0)}. \tag{2}
 \end{equation}
 This result is striking: a senior-led team produces output
 \(\frac{z_1}{h(1-z_0)}\) per senior, which can be much larger than
 either a senior or junior alone. The factor \(\frac{1}{h(1-z_0)}\)
-\textgreater{} 1 represents the {productivity boost from
+>{} 1 represents the {productivity boost from
 teamwork}. It grows as communication becomes cheaper (smaller \(h\)) or
 as junior skill \(z_0\) increases (meaning juniors handle a larger share
 of tasks without escalation).
@@ -254,7 +257,7 @@ the senior as the senior's wage. Therefore:
 \(w_1 = Q_{\text{team}} - n_0 w_0 = \frac{z_1}{h(1-z_0)} - n_0 z_0.\)
 But recall \(n_0 = \frac{1}{h(1-z_0)}\) from (1). Plugging that in: 
 \begin{equation}
-w_1  =  \frac{z_1}{h(1-z_0)} ;-; \frac{1}{h(1-z_0)} ,z_0  = 
+w_1  =  \frac{z_1}{h(1-z_0)} + \frac{1}{h(1-z_0)} ,z_0  = 
 \frac{z_1 - z_0}{h(1-z_0)}. \tag{4}
 \end{equation}
 
@@ -268,7 +271,7 @@ the {bargaining power of scarce seniors}: they are the limiting
 resource, so they can demand a high wage. The {wage ratio} here
 is: 
 \begin{equation}
-\frac{w_1}{w_0}  =  \frac{z_1 - z_0}{hz_0(1-z_0)},.
+\frac{w_1}{w_0}  =  \frac{z_1 - z_0}{hz_0(1-z_0)}.
 \tag{5}
 \end{equation}
 This can be much larger than 1, indicating significant
@@ -298,7 +301,7 @@ $$
 $$
 This rearranges to 
 \begin{equation}
-z_1 ;\ge; \frac{z_0}{1 - h(1-z_0)},.
+z_1 \ge \frac{z_0}{1 - h(1-z_0)}.
 \tag{PC}
 \end{equation}
 This inequality is assumed to hold by parameter choice (the
@@ -367,7 +370,7 @@ This is the {junior's wage in Case 2}.
 They essentially get a cut of the senior's high productivity. The
 {wage ratio} now is:
 \(\frac{w_1}{w_0} = \frac{z_1}{z_1[1 - h(1-z_0)]} = \frac{1}{1 - h(1-z_0)}.\)
-This ratio is \textgreater1 (since the denominator \textless1), but
+This ratio is >1 (since the denominator <1), but
 notably it no longer depends on the skill gap \(z_1 - z_0\). In fact,
 in this junior-scarce regime, the {relative wage is lower} than
 in Case 1 if \(z_1 - z_0\) is significant. (Because in Case 1,
@@ -440,7 +443,7 @@ competence and pass on the rest. Let:
   Perhaps surprisingly, working with an AI might involve some overhead
   (interpreting AI suggestions, correcting errors). We assume \(h_A\)
   plays a similar role to \(h\) for human juniors, and likely \(h_A\) is
-  also \textless{} 1 (AI can also save time, but not eliminate oversight
+  also <{} 1 (AI can also save time, but not eliminate oversight
   entirely).
 \end{itemize}
 
@@ -456,9 +459,12 @@ the senior allocates all their time to handling the AI's unsolved
 problems: \(n_A (1 - z_A) h_A = 1,\) giving
 \(n_A = \frac{1}{h_A(1-z_A)}.\) This mirrors (1). Essentially, a
 single senior can now leverage up to \(1/[h_A(1-z_A)]\) AI processes in
-parallel. The {output per senior with AI} would be: $
+parallel. The {output per senior with AI} would be: 
+\begin{equation}
 Q_\{\text{with AI per senior}\} = n_A z_A + n_A (z_1 - z_A) =
-n_A, z_1 = \frac{z_1}{h_A(1-z_A)},. \tag{7}$ So substituting
+n_A, z_1 = \frac{z_1}{h_A(1-z_A)}. \tag{7}
+\end{equation}
+So substituting
 ``A'' for ``0'' in the earlier team formula, we see the structure is
 analogous. If \(z_A\) and \(h_A\) are comparable to a junior's
 \(z_0, h\), then an AI can similarly boost the senior's productivity.
@@ -484,10 +490,17 @@ Comparing senior's payoff in two options:
   \(\frac{z_1}{h_A(1-z_A)}\) (since no juniors to pay).
 \end{itemize}
 
-The senior will prefer AI if: $ \frac{z_1}{h_A(1-z_A)}
-;\textgreater; \frac{z_1 - z_0}{h(1-z_0)},. \tag{8}$ Rearranging,
-this inequality is: $ \frac{h(1-z_0)}{h_A(1-z_A)} ;\textgreater; 1
-- \frac{z_0}{z_1},. \tag{9}$
+The senior will prefer AI if: 
+\begin{equation}
+\frac{z_1}{h_A(1-z_A)}
+> \frac{z_1 - z_0}{h(1-z_0)}. \tag{8}
+\end{equation}
+Rearranging,
+this inequality is:
+\begin{equation}
+\frac{h(1-z_0)}{h_A(1-z_A)} > 1
+- \frac{z_0}{z_1}. \tag{9}
+\end{equation}
 
 This condition says that the {relative efficiency} of AI (the LHS
 is basically how many more tasks a senior can handle with AI vs with an
@@ -660,9 +673,11 @@ promotions happen at rate \(\lambda n_0\) (since each junior has rate
 Divide through by \(\delta L\) to get seniors as a fraction of
 population \(L_1/L\):
 \(\frac{L_1}{L} = \frac{\phi + \frac{\lambda}{\delta} \frac{L_1}{L} n_0}{1}.\)
-Solving, $ \frac{L_1}{L} =
-\frac{\phi}{1 - \frac{\lambda}{\delta} n_0},. \tag{10}$
-
+Solving, 
+\begin{equation}
+\frac{L_1}{L} =
+\frac{\phi}{1 - \frac{\lambda}{\delta} n_0}. \tag{10}
+\end{equation}
 This is the steady-state share of seniors including the effect of
 learning. Because \(n_0 = \frac{1}{h(1-z_0)}\), we can rewrite the
 denominator as \(1 - \frac{\lambda}{\delta}\frac{1}{h(1-z_0)}\). As long
@@ -694,14 +709,18 @@ have:
 Substitute \(L_1/L\) from (10) and \(L_0/L = 1 - L_1/L\):
 
 \begin{align*}
-\frac{Y_{\text{no AI}}}{L} &= \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},} \cdot \frac{z_1 - z_0}{,h(1-z_0),} ;+; \Big[1 - \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},}\Big] z_0 \\
-&= z_0 ;+; \frac{\phi (z_1 - z_0)}{,h(1-z_0) - \frac{\lambda}{\delta},} ;-; \frac{\phi, z_0}{,1 - \frac{\lambda}{\delta h(1-z_0)},},.
+\frac{Y_{\text{no AI}}}{L} &= \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},} \cdot \frac{z_1 - z_0}{,h(1-z_0),} + \Big[1 - \frac{\phi}{,1 - \frac{\lambda}{\delta h(1-z_0)},}\Big] z_0 \\
+&= z_0 + \frac{\phi (z_1 - z_0)}{,h(1-z_0) - \frac{\lambda}{\delta},} + \frac{\phi, z_0}{,1 - \frac{\lambda}{\delta h(1-z_0)},}.
 \end{align*}
 
-After some algebra, this simplifies to: $ \frac{Y_{\text{no AI}}}{L} =
-z_0 ;+;
-\phi \frac{z_1 - z_0[1 + h (1-z_0)]}{h(1-z_0) - \frac{\lambda}{\delta}},.
-\tag{11}$ One can verify that \(\partial (Y/L)/\partial \lambda > 0\);
+After some algebra, this simplifies to: 
+\begin{equation}
+\frac{Y_{\text{no AI}}}{L} =
+z_0 +
+\phi \frac{z_1 - z_0[1 + h (1-z_0)]}{h(1-z_0) - \frac{\lambda}{\delta}}.
+\tag{11}
+\end{equation}
+One can verify that \(\partial (Y/L)/\partial \lambda > 0\);
 increasing the learning rate \(\lambda\) raises steady-state output per
 capita (because more workers end up as high-skill). In the limit of no
 learning (\(\lambda=0\)), (11) reduces to
@@ -718,9 +737,11 @@ trained. Thus \(L_1/L = \phi\) in the long run with AI (we assume AI
 adoption eliminates the mentoring pathway). Each senior still produces a
 high output \(\frac{z_1}{h_A(1-z_A)}\) with AI. Juniors remain juniors
 (fraction \(1-\phi\) of pop) and work solo for output \(z_0\) each. So
-the {steady-state per-capita output with AI} is: $
+the {steady-state per-capita output with AI} is: 
+\begin{equation}
 \frac{Y_{\text{AI, steady}}}{L} = \phi \frac{z_1}{h_A(1-z_A)} +
-(1-\phi) z_0. \tag{12}$
+(1-\phi) z_0. \tag{12}
+\end{equation}
 
 The crucial question is: {which steady state yields higher output,
 with or without AI?} It is not obvious because {AI boosts current
@@ -746,10 +767,13 @@ considerations, AI adoption could lead to a lower steady-state output}
 than a scenario with no AI but continual skill development.
 
 Deriving the precise inequality, from (11) and (12), one condition for
-\(Y_{\text{AI}}/L < Y_{\text{no AI}}/L\) turns out to be: $
-\frac{z_1}{h_A(1-z_A)} - z_0 ;\textless;
+\(Y_{\text{AI}}/L < Y_{\text{no AI}}/L\) turns out to be:
+\begin{equation}
+\frac{z_1}{h_A(1-z_A)} - z_0 <
 \frac{z_1 - z_0}{h(1-z_0) - \frac{\lambda}{\delta}} -
-\frac{z_0}{1 - \frac{\lambda}{\delta h(1-z_0)}}. \tag{13}$ This
+\frac{z_0}{1 - \frac{\lambda}{\delta h(1-z_0)}}. \tag{13}
+\end{equation}
+This
 expression basically asks whether the {AI-driven senior output
 advantage} (\(\frac{z_1}{h_A(1-z_A)} - z_0\), i.e.~how much more a
 senior+AI produces over a junior's output) is smaller than the
@@ -762,7 +786,7 @@ To give intuition: if \(\lambda = 0\) (no learning), the RHS of (13)
 reduces to \(\frac{z_1 - z_0}{h(1-z_0)} - z_0\), which is exactly $
 \frac{z_1}{h(1-z_0)} - (z_0 + \frac{z_1 - z_0}{h(1-z_0)}) =
 \frac{z_1}{h(1-z_0)} - \frac{z_1}{h(1-z_0)} = 0$. So the inequality
-says AI decreases output if $ \frac{z_1}{h_A(1-z_A)} - z_0 \textless{}
+says AI decreases output if $ \frac{z_1}{h_A(1-z_A)} - z_0 <{}
 0$, which would {never} be true if \(z_1 > z_0\). So with
 \(\lambda=0\), AI always helps or at least doesn't hurt output (as
 expected). As \(\lambda\) grows, the RHS increases, eventually possibly
@@ -815,8 +839,12 @@ Meanwhile, the value of being a solo junior is
 promotion). Indifference requires \(J = J_{\text{solo}}\). Solving the
 Bellman:
 \(J = \frac{w_{0,\text{team}} + \lambda \frac{w_1}{\delta}}{\delta + \lambda},\)
-and setting \(J = z_0/\delta\), we get: $ w_\{0,\text{team}\} = z_0 -
-\frac{\lambda}{\delta}(w_1 - z_0). \tag{14}$ This means juniors on a
+and setting \(J = z_0/\delta\), we get:
+\begin{equation}
+w_\{0,\text{team}\} = z_0 -
+\frac{\lambda}{\delta}(w_1 - z_0). \tag{14}
+\end{equation}
+This means juniors on a
 team might accept a wage {below} \(z_0\) (their static marginal
 product) if \(w_1 > z_0\) and \(\lambda>0\), because they expect to
 recoup it when they become seniors. In other words, they effectively pay
@@ -829,9 +857,13 @@ If (14) holds, the senior's surplus from a team is even larger because
 juniors are cheaper labor. In fact, substituting this
 \(w_{0,\text{team}}\) into the senior's team wage formula, one finds:
 \(w_1 = \frac{z_1}{h(1-z_0)} - n_0 w_{0,\text{team}} = \frac{z_1}{h(1-z_0)} - \frac{1}{h(1-z_0)}\Big(z_0 - \frac{\lambda}{\delta}(w_1 - z_0)\Big).\)
-Solving for \(w_1\) gives: $ w_1 =
+Solving for \(w_1\) gives: 
+\begin{equation}
+w_1 =
 \frac{\frac{z_1 - z_0}{h(1-z_0)} + \frac{\lambda}{\delta}\frac{z_0}{h(1-z_0)}}{1 + \frac{\lambda}{\delta h(1-z_0)}}.
-\tag{15}$ This is the senior wage when juniors fully internalize
+\tag{15}
+\end{equation}
+This is the senior wage when juniors fully internalize
 learning (in equilibrium \(w_1\) is determined by a fixed point). One
 can check that this \(w_1\) is lower than the previous
 \(w_1 = \frac{z_1 - z_0}{h(1-z_0)}\); juniors' willingness to work for
@@ -844,8 +876,12 @@ already willing to undercut their wage for training, a senior's private
 benefit of replacing them with AI is smaller. We would modify the
 {AI adoption condition} (8) to compare \(w_1\) from (15) (team
 with learning-internalizing juniors) to the AI output. The condition for
-AI use becomes: $ w_1 \text{ (with learning-internalizing juniors) }
-\textless{} \frac{z_1}{h_A(1-z_A)}. \tag{16}$ Substituting (15) for
+AI use becomes: 
+\begin{equation}
+w_1 \text{ (with learning-internalizing juniors) }
+<{} \frac{z_1}{h_A(1-z_A)}. \tag{16}
+\end{equation}
+Substituting (15) for
 \(w_1\), this inequality is more complex, but the key insight is:
 {if juniors value learning, they effectively subsidize the team,
 making seniors less eager to drop them for AI}. In fact, seniors might
@@ -1186,6 +1222,5 @@ further research and data in the coming years.
   Mar 26, 2025). {[}Discusses how firms dropping junior hiring due to AI
   threatens apprenticeship and innovation; provides a practitioner
   perspective.{]}
-\end{itemize}
 \end{itemize}
 \end{document}
