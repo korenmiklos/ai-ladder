@@ -15,7 +15,7 @@
 
 
 \title{Broken Ladders: AI, Teamwork, and the Dynamics of Skill Formation in the Workplace}
-\author{Zsófia Bárány and Miklós Koren\thanks{\emph{Bárány}: Central European University, CEPR, Hungarian Society of Economics and ROA. \emph{Koren}: Central European University, HUN-REN KRTK, CEPR and CESifo.  Portions of the text were written by OpenAI o3 based on our model notes and deep research prompts. For transparency, we disclose our prompts here: https://github.com/korenmiklos/ai-ladder/tree/main/notes We reviewed and edited the text for correctness and style. We are responsible for any remaining errors.}}
+\author{Zsófia Bárány and Miklós Koren\thanks{\emph{Bárány}: Central European University, CEPR, Hungarian Society of Economics and ROA. \emph{Koren}: Central European University, HUN-REN KRTK, CEPR and CESifo.  Portions of the text were written by \texttt{OpenAI o3 "Deep Research"} based on our model notes and  prompts. For transparency, we disclose our prompts here: https://github.com/korenmiklos/ai-ladder/tree/main/notes We reviewed and edited the text for correctness and style. We are responsible for any remaining errors.}}
 \date{June 25, 2025}
 
 \begin{document}
@@ -87,6 +87,59 @@ Buera et al.~(2025), and we situate our results in the broader
 discussion on AI's impact on the labor market (e.g.~Acemoglu \&
 Restrepo, Korinek, etc.) with an emphasis on the potential {dynamic
 losses from a lack of learning opportunities}.
+
+\bigskip
+
+Our model highlights a {dynamic externality} in the adoption of
+AI in skilled work: the loss of learning opportunities for junior
+workers. This connects to several strands of literature:
+
+\paragraph{Learning-by-doing and dynamic inefficiencies.} The idea that
+current production can build future human capital has a long history
+in economics (Arrow, 1962; Lucas, 1988). In those models, firms or
+workers do not fully internalize the benefit of the skills they
+accumulate for society's future, leading to underinvestment in
+learning. In our setup, the externality is explicit: when a senior
+chooses AI over mentoring a junior, the senior ignores the fact that
+one less junior will become a high-skill worker. This is a social loss
+not reflected in the senior's private payoff. Other work argues that firms adopt cost-saving
+technologies without considering the negative effect on workers' skill
+acquisition and earnings. Acemoglu \& Restrepo (2018, 2020) emphasize
+that automation needs to be counterbalanced by new tasks for labor;
+otherwise, workers get displaced and aggregate gains may be smaller
+than anticipated. 
+
+\paragraph{Rent-seeking and optimal incentives.} Our welfare analysis is related to an
+insight by Beraja and Buera (2024). They study dynamic competition
+in oligopolies and find that private incentives can deviate from
+social optima due to dynamic considerations (firms do not internalize
+the full social benefit of more competition or innovation). However,
+they also show that {dynamic competition alone doesn't always
+justify intervention} -- in some cases the equilibrium can be
+constrained-efficient. In our case, there are also dynamic inefficiencies. When the learning externality is not internalized, seniors may overinvest in AI. When juniors are willing to forego wages in exchange for learning, seniors extract too much rent, potentially leading to a misallocation of resources. 
+
+\paragraph{Evidence on AI's impact on training and skills.} Recent studies explore the use of generative AI and similar technologies.
+Hess et al.~(2023) find that in jobs with high
+automation risk, {workers and firms invest less in training}.
+This aligns with our model's implication that firms might cut back
+on developing junior talent if they plan to automate roles.
+Mühlemann (2024) finds that {AI adoption in German firms led
+to reduced training for current workers, but an increase in
+apprenticeship contracts}. The latter suggests some firms anticipate
+needing skilled workers who know how to work with AI, so they ramp
+up apprentice programs. There is also anecdotal evidence of companies {reducing
+entry-level hiring} because of AI (Appelo, 2025).
+
+On the flip side, AI tools might serve as a {training device}.
+The study by Brynjolfsson et al.~(2023) provides
+{``proof-of-concept'' that generative AI can supplement human
+learning}: in customer support, novice workers improved markedly
+with AI help, essentially learning from AI's suggestions. Noy and
+Zhang (2023) found less-skilled writers improved their writing
+quality using ChatGPT, closing some gap with more-skilled writers.
+These findings suggest a possible {complementary} path: instead
+of replacing juniors, firms could give juniors AI tools to make them
+productive and accelerate their learning. 
 
 \section{Model Setup: Skill Levels, Tasks, and Team Production}\label{model-setup-skill-levels-tasks-and-team-production}
 
@@ -328,184 +381,7 @@ Team output and the long run share of seniors are the same as in the economy wit
 As $z_1/(h_A(1-z_A))$ needs to be larger for AI to be implemented, the right hand side of the above expression will be higher, implying a ceteris paribus that the above inequality is less likely to hold. While internalized learning makes dynamically inefficient AI less likely to happen, it is still a possibility. 
 
 
-\subsection{Discussion: Related Literature and Policy
-Implications}\label{discussion-related-literature-and-policy-implications}
-
-Our model highlights a {dynamic externality} in the adoption of
-AI in skilled work: the loss of learning opportunities for junior
-workers. This connects to several strands of literature:
-
-{Learning-by-doing and dynamic inefficiencies:} The idea that
-current production can build future human capital has a long history
-in economics (Arrow, 1962; Lucas, 1988). In those models, firms or
-workers do not fully internalize the benefit of the skills they
-accumulate for society's future, leading to underinvestment in
-learning. In our setup, the externality is explicit: when a senior
-chooses AI over mentoring a junior, the senior ignores the fact that
-one less junior will become a high-skill worker. This is a social loss
-not reflected in the senior's private payoff. Our results echo themes
-in Acemoglu's work on automation: he argues that there can be
-{excessive automation} because firms adopt cost-saving
-technologies without considering the negative effect on workers' skill
-acquisition and earnings. Acemoglu \& Restrepo (2018, 2020) emphasize
-that automation needs to be counterbalanced by new tasks for labor;
-otherwise, workers get displaced and aggregate gains may be smaller
-than anticipated. In our model, training juniors can be viewed as
-creating ``new skilled workers'' (akin to new task opportunities for
-labor in the future). If AI halts that, the long-run supply of skilled
-labor is lower, potentially reducing innovation or productivity down
-the line.
-
-{Rent-seeking and optimal incentives:} We drew a parallel to an
-insight by Buera and co-authors (2025). They study dynamic competition
-in oligopolies and find that private incentives can deviate from
-social optima due to dynamic considerations (firms do not internalize
-the full social benefit of more competition or innovation). However,
-they also show that {dynamic competition alone doesn't always
-justify intervention} -- in some cases the equilibrium can be
-constrained-efficient. The analogy in our context would be: is the
-private outcome (seniors replacing juniors with AI) inefficient, or
-could it be constrained-efficient? If seniors are scarce and capture
-rents, they undervalue the creation of new seniors (since that would
-erode their future rents). This likely leads to {under-provision
-of training} relative to the social optimum. Even if seniors
-internalize juniors' learning (via lower wages), the senior is just
-extracting that value; the junior's presence still creates a positive
-externality for others (e.g., future firms or the economy benefit from
-having more skilled workers beyond the senior's own firm). Thus, we
-suspect the market equilibrium is tilted toward too much AI adoption
-from a social viewpoint, whenever learning externalities are
-significant. This is a form of dynamic inefficiency where regulators
-or policy might want to intervene -- akin to subsidizing training or
-taxing automation. Buera et al.'s framework is different (firms and
-innovation), but the common theme is balancing static gains with
-dynamic considerations. In Buera's model, the government might
-subsidize entrants to maintain competition; in our model, one could
-imagine {incentives for firms to hire and train juniors} even
-if AI is available, to sustain human capital formation.
-
-{Evidence on AI's impact on training and skills:} Given that
-generative AI is a very recent technology, hard empirical evidence on
-long-run skill dynamics is limited. However, early studies and surveys
-provide hints:
-
-As noted earlier, Hess et al.~(2023) find that in jobs with high
-automation risk, {workers and firms invest less in training}.
-This aligns with our model's implication that firms might cut back
-on developing junior talent if they plan to automate roles.
-Muehlemann (2024) finds that {AI adoption in German firms led
-to reduced training for current workers, but an increase in
-apprenticeship contracts}. The latter suggests some firms anticipate
-needing skilled workers who know how to work with AI, so they ramp
-up apprentice programs. In our terms, that would be like trying to
-ensure juniors are still coming up the pipeline, perhaps in a more
-AI-centric way.
-
-There is anecdotal evidence of companies {reducing
-entry-level hiring} because of AI. For example, some law firms have
-slowed hiring of junior lawyers as AI can do first drafts of
-contracts and research. In programming, one hears quotes like
-{``why hire juniors when a single senior with AI can do the
-job?''}. Our model formalizes the logic behind such quotes. But
-commentators warn that this is short-sighted: junior roles today are
-how seniors of tomorrow are created.
-
-On the flip side, AI tools might serve as a {training device}.
-The study by Brynjolfsson et al.~(2023) provides
-{``proof-of-concept'' that generative AI can supplement human
-learning}: in customer support, novice workers improved markedly
-with AI help, essentially learning from AI's suggestions. Noy and
-Zhang (2023) found less-skilled writers improved their writing
-quality using ChatGPT, closing some gap with more-skilled writers.
-These findings suggest a possible {complementary} path: instead
-of replacing juniors, firms could give juniors AI tools to make them
-productive and accelerate their learning. In our model's terms, that
-would keep \(\lambda\) (learning) alive while also enjoying some of
-AI's static benefits -- a potential win-win if done right.
-
-{Policy responses:} If indeed there is a danger that the
-pipeline of skill formation gets broken, what policies could mitigate
-this? One idea is {incentivizing human-complementary uses of
-AI} over pure automation. Acemoglu et al.~(2023) argue for directing
-innovation towards augmenting workers rather than replacing them.
-Concretely, they suggest measures like:
-
-Adjusting the {tax code}: currently, in the U.S., companies
-can often save costs by investing in software/AI (capital) rather
-than hiring workers, due to how labor is taxed (payroll taxes,
-etc.). Making taxes neutral between hiring a person and deploying an
-AI could remove an artificial incentive to cut jobs. Equivalently,
-one could offer tax credits for training expenses or for maintaining
-apprentice programs. If firms faced the true long-run cost of lost
-human capital, they might choose a more balanced approach.
-
-{Training subsidies or requirements}: Governments could
-subsidize firms that provide robust training to young workers, or
-even mandate industries (like law, medicine) to maintain certain
-residency/internship positions. Historically, some professions have
-{guild-like systems} to ensure knowledge transfer. In an AI
-era, we might need updated versions of these to ensure juniors still
-get experience, perhaps focusing on tasks AI can't do (or overseeing
-AI).
-
-{Worker voice and bargaining}: The CEPR columnsuggests that
-giving workers more voice in tech implementation decisions could
-help steer AI adoption in a worker-friendly direction. If junior
-employees (or their unions) had a say, they might push for AI that
-{helps them} rather than replaces them, or for maintaining
-pathways to advancement. This is of course challenging if the
-juniors are never hired to begin with -- a catch-22 -- but it speaks
-to the need for broader stakeholder involvement.
-
-{Ensuring new task creation}: In the long run, entirely new
-roles might emerge that juniors can fill and learn in, even if old
-entry-level tasks are done by AI. For example, if AI handles coding,
-perhaps {prompt engineering} or {AI supervision} becomes
-the entry role. Some optimists believe AI will create more demand
-for human judgment and soft skills, which could form the basis of
-new junior positions. Our model does not incorporate new task
-creation, but if we did, it could alleviate the dynamic loss
-(Acemoglu \& Restrepo (2019) stress that new tasks for humans
-historically accompanied automation). There may be a need for
-{policies that encourage the development of new complementary
-jobs} -- e.g., funding for R\&D in areas where humans can expand
-work with AI rather than be replaced.
-
-{Long-term distributional effects:} Our model has implications
-for inequality that resonate with ongoing debates. In the short run,
-AI may increase the productivity of top-skilled workers (seniors),
-increasing the wage gap if they capture that value. Indeed,
-{inequality could rise sharply} if AI is used in the Case 1
-scenario. Acemoglu's recent paper (2024) suggests that even if AI
-makes lower-skilled workers more productive in some tasks, it might
-{still} increase inequality unless it's creating whole new
-opportunities. Our model's Case 1 outcome with AI is an example:
-juniors might improve a bit with AI, but if they're largely sidelined,
-the gap widens. However, if juniors are scarce (Case 2), they could
-benefit and inequality could decrease, at least initially. Over the
-long run, if the supply of skilled workers doesn't grow (or even
-shrinks relative to population because of no learning), we could see a
-form of {skill premium persistence} or even a decline in
-overall innovation. There is also a parallel to the literature on
-{human capital and growth}: if one generation doesn't pass on
-skills to the next, you can get stagnation. This is somewhat analogous
-to some low-development traps where lack of skill transfer keeps
-productivity low.
-
-In terms of {empirics}, this is a nascent area. It will be
-interesting to see in a decade whether industries that heavily adopted
-AI early (like perhaps software coding or customer service) have a
-missing cohort of mid-level professionals. Will companies regret not
-training people? Or will AI evolve so rapidly that many traditional
-senior roles themselves change or become obsolete, making the old
-``pyramid model'' of organization unnecessary? Some have speculated
-about a future with {very flat organizations}: a few
-super-experts (plus AI) do all the work, and everyone else finds other
-things to do. Others argue that human oversight and creativity will
-remain in demand, preserving the need for career progression.
-
-\subsection{Conclusion}\label{conclusion}
-
+\section{Conclusion}\label{discussion-related-literature-and-policy-implications}
 We developed a stylized model of an economy with high-skill ``seniors''
 and low-skill ``juniors'' to investigate the impact of AI on
 productivity and skill formation. The model yields several insights.
@@ -527,25 +403,10 @@ level of human capital and output}, despite the initial AI-induced
 boost. We derived conditions under which long-run GDP per capita falls
 with AI, even though short-run GDP rises.
 
-These findings underscore a potential {trade-off between present
-and future productivity}. Our model is admittedly abstract -- reality is
-more complex, with many tasks and continuous skill development -- but it
-captures the essence of a concern raised by practitioners: {``Where
-will the experts of tomorrow come from if nobody hires juniors
-today?''}. The model also resonates with historical anecdotes. For
-instance, in professions like crafts or medicine, when training
-pipelines broke down, it led to skill shortages until corrective
-measures were taken (sometimes through public intervention). We might be
-at risk of a similar phenomenon in modern knowledge industries with
-generative AI.
-
 We should note some {limitations and open questions} in our
-analysis:
-
-
-We treated \(z_1, z_0, z_A, h, h_A\) as exogenous. In reality, these
+analysis. First, we treated \(z_1, z_0, z_A, h, h_A\) as exogenous. In reality, these
 could evolve. For example, \(z_A\) might improve over time as AI
-learns from data (as per Wang \& Wong (2025) scenario). Also, human
+learns from data (Wang \& Wong 2025). Also, human
 skills \(z_0, z_1\) could respond to the presence of AI (educational
 systems might train people differently if certain tasks are
 automated). Incorporating such feedback is an important extension.
@@ -554,98 +415,47 @@ We assumed learning \(\lambda\) happens only through mentoring. Could
 there be alternative pathways? Perhaps juniors could learn from AI (a
 form of AI-driven training). If an AI can codify expert knowledge,
 maybe juniors could acquire skills faster on their own. This would
-mitigate the dynamic loss. Preliminary evidence (e.g., improved novice
-performance with AI tools) gives credence to this possibility.
-However, skeptics counter that true expertise often requires rich
-tacit knowledge that comes from experience, not just AI advice. More
-research (empirical and theoretical) is needed to understand AI's role
-as a teacher vs.~as a crutch that {prevents} learning (as seen in
-education contexts where students over-rely on AI and don't learn the
-material).
+mitigate the dynamic loss. 
 
-Our equilibrium analysis with learning didn't delve into strategic
-behavior much (except a brief mention of juniors internalizing
-learning). In a dynamic game, one could ask: will seniors
-{under-invest in training} juniors or even intentionally not pass
-on knowledge to remain valuable (the classic ``knowledge hoarding''
-problem)? How might that interact with AI adoption (since an
-alternative to hoarding is just not having juniors at all)? These
-nuances could be important in assessing whether the market
-under-provides learning opportunities.
+If indeed there is a danger that the
+pipeline of skill formation gets broken, what policies could mitigate
+this? One idea is adjusting the {tax code}: currently, in the U.S., companies
+can often save costs by investing in software/AI (capital) rather
+than hiring workers, due to how labor is taxed (payroll taxes,
+etc.). Making taxes neutral between hiring a person and deploying an
+AI could remove an artificial incentive to cut jobs. Equivalently,
+one could offer tax credits for training expenses or for maintaining
+apprentice programs. If firms faced the true long-run cost of lost
+human capital, they might choose a more balanced approach.
 
-Finally, there's the question of {policy and welfare}: if we
-determined that AI adoption is dynamically inefficient (i.e., society
-would be better off in the long run if some juniors were trained),
-what is the best way to achieve that? A blunt ban on AI in certain
-tasks seems unlikely and inefficient. Incentive-based approaches (like
-training subsidies or tax adjustments) are more promising and were
-discussed above. One could formally model a social planner or
-government that values future productivity and see what the optimal
-intervention would be. This intersects with the literature on R\&D
-policy and human capital externalities.
-
-To conclude, our model provides a theoretical framework to think about
-the {long-term consequences of AI on the labor force's skill
-composition}. It suggests that even if AI brings immediate gains, we
-should be vigilant about its impact on {career dynamics and
-learning}. The full impact of generative AI on the workforce will play
-out over decades; by combining insights from models like ours with
-empirical monitoring, policymakers and firms can hopefully steer toward
-outcomes where AI technologies {augment} human capabilities and
-sustain growth, rather than create a short-lived spike in productivity
-followed by stagnation due to missing human expertise. The evolving
-literature -- from Buera et al.'s work on dynamic competition to
-Acemoglu et al.'s calls for human-centric AI deployment -- all point to
-a common message: {do not ignore the dynamic effects}. Our
-contribution is to highlight the apprenticeship dimension of those
-dynamic effects in the age of AI, an area that will surely benefit from
-further research and data in the coming years.
+Governments could also
+subsidize firms that provide robust training to young workers, or
+even mandate industries (like law, medicine) to maintain certain
+residency/internship positions. Historically, some professions have
+{guild-like systems} to ensure knowledge transfer. In an AI
+era, we might need updated versions of these to ensure juniors still
+get experience, perhaps focusing on tasks AI cannot yet do.
 
 
 \section*{References}\label{references}
-\begin{itemize}
 
-\item
-  Buera, F. et al.~(2025). {The Life-cycle of Concentrated
-  Industries}. (EFG Draft). {[}We refer to dynamic efficiency analysis
-  in this paper.{]}
-\item
-  Heß, P., Janssen, S., \& Leber, U. (2023). {The effect of
-  automation technology on workers' training participation}.
-  {Economics of Education Review, 96}, 102438. {[}Finds workers
-  exposed to automation are significantly less likely to receive
-  training.{]}
-\item
-  Mühlemann, S. (2024). {AI Adoption and Workplace Training}. IZA
-  Discussion Paper No.~17367. {[}Shows AI-adopting firms cut training
-  for current workers and hire more skilled workers, but also increase
-  apprenticeships in SMEs.{]}
-\item
-  Brynjolfsson, E., Li, D., \& Raymond, L. (2023). {Generative AI
-  at Work}. NBER Working Paper 31161 (rev. Nov 2023). {[}Field
-  experiment with customer support agents; AI boosted productivity 14\%,
-  especially for novice workers, and helped disseminate expert best
-  practices.{]}
-\item
-  Acemoglu, D. (2024). {The Simple Macroeconomics of AI}. (Working
-  Paper, April 2024). {[}Argues modest productivity gains from AI and
-  that AI could increase capital share; also notes AI can increase
-  inequality even if it improves some low-skill productivity.{]}
-\item
-  Acemoglu, D., Johnson, S., \& others (2023). {Human-Centric AI}
-  (CEPR Policy Insight No.~124). {[}Advocates for AI that complements
-  workers; discusses policy changes like tax reform to encourage
-  hiring/training over pure automation.{]}
-\item
-  Wang, P., \& Wong, T.N. (2025). {Artificial Intelligence and
-  Technological Unemployment}. NBER Working Paper 33867. {[}Model of AI
-  as learning-by-using; scenarios of AI initially complementing then
-  substituting labor.{]}
-\item
-  Appelo, J. (2025). ``AI Wrecks the Corporate Career Ladder. Give
-  Juniors the Steering Wheel!'' {The Maverick Mapmaker} (Medium,
-  Mar 26, 2025). {[}Discusses how firms dropping junior hiring due to AI
-  threatens apprenticeship and innovation; provides a practitioner
-  perspective.{]}
+\begin{itemize}
+\item Acemoglu, D. (2024). \textit{The simple macroeconomics of AI}. Working paper, Massachusetts Institute of Technology.
+\item Acemoglu, D., Autor, D., \& Johnson, S. (2023). \textit{Can we have pro-worker AI? Choosing a path of machines in service of minds} (CEPR Policy Insight No.\~123). Centre for Economic Policy Research.
+\item Acemoglu, D., \& Restrepo, P. (2018). The race between man and machine: Implications of technology for growth, factor shares, and employment. \textit{American Economic Review}, 108(6), 1488--1542. doi:10.1257/aer.20160696
+\item Acemoglu, D., \& Restrepo, P. (2020). Robots and jobs: Evidence from US labor markets. \textit{Journal of Political Economy}, 128(6), 2188--2244. doi:10.1086/705716
+\item Appelo, J. (2025, March 26). AI wrecks the corporate career ladder. Give juniors the steering wheel! \textit{The Maverick Mapmaker}.
+\item Arrow, K.\ J. (1962). The economic implications of learning by doing. \textit{The Review of Economic Studies}, 29(3), 155--173. doi:10.2307/2295952
+\item Beraja, M., \& Buera, F. (2024). \textit{The life-cycle of concentrated industries}. Unpublished manuscript.
+\item Brynjolfsson, E., Li, D., \& Raymond, L. R. (2023). \textit{Generative AI at work} (NBER Working Paper No.\~31161). National Bureau of Economic Research.
+\item Garicano, L. (2000). Hierarchies and the organization of knowledge in production. \textit{Journal of Political Economy}, 108(5), 874--904. doi:10.1086/316101
+\item Garicano, L., \& Rossi-Hansberg, E. (2006). Organization and inequality in a knowledge economy. \textit{Quarterly Journal of Economics}, 121(4), 1383--1435. doi:10.1162/qjec.121.4.1383
+\item Heß, P., Janssen, S., \& Leber, U. (2023). The effect of automation technology on workers’ training participation. \textit{Economics of Education Review}, 96, 102438. doi:10.1016/j.econedurev.2023.102438
+\item Lucas, R.\ E., Jr. (1988). On the mechanics of economic development. \textit{Journal of Monetary Economics}, 22(1), 3--42. doi:10.1016/0304-3932(88)90168-7
+\item Mühlemann, S. (2024). \textit{AI adoption and workplace training} (IZA Discussion Paper No.\~17367). Institute of Labor Economics.
+\item Noy, S., \& Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. \textit{Science}, 381(6654), 187--192. doi:10.1126/science.adh2586 %
+\item Wang, P., \& Wong, T. N. (2025). \textit{Artificial intelligence and technological unemployment} (NBER Working Paper No.\~33867). National Bureau of Economic Research.
 \end{itemize}
+
+
 \end{document}
